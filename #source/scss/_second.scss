@@ -1,0 +1,18 @@
+.second {
+	background: url("../../images/system_img/bg-second.png") top right / cover no-repeat;
+	width: 100%;
+
+	margin: -150px 0 0 0;
+	position: relative;
+	z-index: 5;
+
+	padding: 200px 0 0 0;
+
+	.title {
+	}
+
+	img {
+		margin: 0 auto;
+		display: block;
+	}
+}

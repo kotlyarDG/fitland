@@ -1,0 +1,78 @@
+.third {
+	background: linear-gradient(180deg, #c38d75 0%, #a86e59 100%);
+	// display: none;
+
+	.title {
+		margin: 0 0 25px 0;
+	}
+
+	&__slider {
+		transform: translateY(-57px);
+
+		// @media (max-width: $xs) {
+		// 	transform: none;
+		// }
+
+		.slick-list {
+			width: calc(100vw - 50px);
+			margin: 0 auto;
+		}
+
+		.slick-track {
+			padding: 170px 0;
+
+			// @media (min-width: $md) {
+			// 	padding-bottom: 17vw;
+			// }
+
+			// @media (max-width: $xs) {
+			// 	padding: 0;
+			// }
+		}
+
+		.slick-center {
+			transition: 1000ms;
+			transform: scale(1.3);
+
+			// @media (max-width: $sm) {
+			// 	transform: scale(1.3) translateY(8vw);
+			// }
+
+			// @media (max-width: $xs) {
+			// 	transform: none;
+			// }
+		}
+
+		.slick-arrow {
+			font-size: 0;
+			display: block;
+			width: 40px;
+			height: 40px;
+			background: url("../images/system_img/slider/prev.svg") center / cover no-repeat;
+			position: absolute;
+			z-index: 50;
+			bottom: 0;
+			transition: 0.4s;
+		}
+		/* Стрелка влево */
+		.slick-arrow.slick-prev {
+			left: 20px;
+
+			// @media (min-width: $xs) {
+			// 	&:hover {
+			// 		transform: translate(-5px, -5px) rotate(-360deg);
+			// 	}
+			// }
+		}
+		/* Стрелка вправо */
+		.slick-arrow.slick-next {
+			background: url("../images/system_img/slider/next.svg") center / cover no-repeat;
+			right: 20px;
+			// @media (min-width: $xs) {
+			// 	&:hover {
+			// 		transform: translate(5px, -5px) rotate(360deg);
+			// 	}
+			// }
+		}
+	}
+}
