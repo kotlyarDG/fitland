@@ -1,0 +1,36 @@
+// Обнуление
+@import 'reset';
+
+// Подключение шрифтов
+@import 'fonts';
+
+// Миксины
+
+// Адаптивный шрифт 
+// Указать величину шрифта на минимальном экране и на макетном размере 
+$maxWidth: 1280; 
+@mixin adaptive-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+// Общие стили
+html{
+
+}
+
+body{
+
+}
+
+// Подключение общих блоков
+@import 'blocks';
+
+// Header
+@import 'header';
+
+// Footer
+@import 'footer';
+
+
