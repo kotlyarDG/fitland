@@ -49,6 +49,10 @@
 			}
 		}
 
+		.slick-slide {
+			transition: 0.3s;
+		}
+
 		.slick-center {
 			transition: 1000ms;
 			transform: scale(1.3);

@@ -709,6 +709,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.third__slider .slick-slide {
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
 .third__slider .slick-center {
   -webkit-transition: 1000ms;
   -o-transition: 1000ms;
