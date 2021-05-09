@@ -2245,6 +2245,12 @@ input[type="checkbox"]:checked + label:after {
   padding: 0 50px;
 }
 
+@media (max-width: 768px) {
+  .footer__container {
+    padding: 0 15px;
+  }
+}
+
 .footer__content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2891,6 +2897,7 @@ input[type="checkbox"]:checked + label:after {
           align-items: center;
   position: relative;
   padding: 30px 0 0 0;
+  min-height: 550px;
 }
 
 #trainer-popup .popup__text-trainer {
