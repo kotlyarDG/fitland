@@ -82,8 +82,8 @@ $time-animation: 0.4s;
 
 	.burger__menu {
 		display: block;
-		display: flex;
-		flex-direction: column;
+		// display: flex;
+		// flex-direction: column;
 		width: 100vw;
 		height: calc(100vh - 100px);
 		overflow-y: auto;
@@ -100,6 +100,10 @@ $time-animation: 0.4s;
 			margin: 0 0 20px 0;
 			font-size: 30px;
 			line-height: 34px;
+		}
+
+		.header__menu-item {
+			display: block;
 		}
 
 		.header__menu-link.active:after {

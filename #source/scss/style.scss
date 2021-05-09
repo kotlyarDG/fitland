@@ -334,7 +334,7 @@ $xs: 768px;
 			width: 95%;
 		}
 
-		@media (max-width: 500px) {
+		@media (max-width: 768px) {
 			padding: 10px;
 		}
 	}
@@ -344,6 +344,9 @@ $xs: 768px;
 		padding: 7vh 5vw;
 
 		text-align: center;
+		@media (max-width: 768px) {
+			padding: 20px;
+		}
 	}
 
 	&__block {

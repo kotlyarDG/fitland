@@ -377,13 +377,6 @@ h1, h2, h3, h4, h5, h6 {
   }
   .burger__menu {
     display: block;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
     width: 100vw;
     height: calc(100vh - 100px);
     overflow-y: auto;
@@ -404,6 +397,9 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 20px 0;
     font-size: 30px;
     line-height: 34px;
+  }
+  .burger__menu .header__menu-item {
+    display: block;
   }
   .burger__menu .header__menu-link.active:after {
     display: none;
@@ -601,7 +597,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .third {
-  background: #bb846c;
+  background: url("../images/system_img/bg-third.png") center/cover no-repeat;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1129,6 +1125,7 @@ h1, h2, h3, h4, h5, h6 {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
+  min-height: 441px;
 }
 
 @media (max-width: 991px) {
@@ -1216,6 +1213,7 @@ h1, h2, h3, h4, h5, h6 {
 .services-form__btn {
   width: 297px;
   height: 54px;
+  min-height: 54px;
   display: inline-block;
   background: #e7ddca;
   border: 3px solid #a86e59;
@@ -2725,7 +2723,7 @@ input[type="checkbox"]:checked + label:after {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .popup-first__wrapper {
     padding: 10px;
   }
@@ -2735,6 +2733,12 @@ input[type="checkbox"]:checked + label:after {
   border-radius: 90px;
   padding: 7vh 5vw;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .popup-first__content {
+    padding: 20px;
+  }
 }
 
 .popup-first__block {
