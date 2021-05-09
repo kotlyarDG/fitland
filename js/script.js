@@ -7,6 +7,8 @@ $(document).ready(function () {
 			scrollTop: $(blockId).offset().top
 		}, 'slow');
 		$('.header__burger,.burger__menu,.header').removeClass('_active');
+		$('body').removeClass('_lock');
+
 		e.preventDefault();
 	})
 
