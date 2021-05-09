@@ -7,4 +7,9 @@
 	text-transform: uppercase;
 
 	color: #e7ddca;
+
+	@media (max-width: 768px) {
+		font-size: 35px;
+		line-height: 43px;
+	}
 }

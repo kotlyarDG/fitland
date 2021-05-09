@@ -6,6 +6,28 @@
 		min-width: 100%;
 		height: 100vh;
 		display: flex;
+		position: relative;
+		z-index: 15;
+
+		@media (max-width: 991px) {
+			flex-direction: column;
+			min-height: 100vh;
+			height: auto;
+		}
+	}
+}
+
+.services__title {
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	display: inline-block;
+	transform: translateX(-50%);
+	z-index: 5;
+	color: #fff;
+
+	@media (max-width: 991px) {
+		display: none;
 	}
 }
 .title-service {
@@ -15,6 +37,28 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
+	z-index: 2;
+
+	@media (max-width: 991px) {
+		width: 100%;
+		height: 35vh;
+	}
+
+	&:before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: rgba(180, 118, 96, 0.45);
+		z-index: 2;
+		opacity: 1;
+		transition-duration: 0.3s;
+		transition-delay: 0.3s;
+	}
 
 	&__title {
 		font-weight: bold;
@@ -24,6 +68,28 @@
 		text-transform: uppercase;
 
 		color: #ffffff;
+		position: relative;
+		z-index: 3;
+		opacity: 1;
+		transition-duration: 0.3s;
+		transition-delay: 0.3s;
+
+		@media (max-width: 1250px) {
+			font-size: 22px;
+			line-height: 30px;
+		}
+	}
+
+	&.title-service_active {
+		.title-service__title {
+			opacity: 0;
+			transition-delay: 0;
+		}
+
+		&:before {
+			opacity: 0;
+			transition-delay: 0;
+		}
 	}
 }
 .title-service--tickets {
@@ -43,19 +109,35 @@
 	position: absolute;
 	top: 30px;
 	left: 35px;
+	cursor: pointer;
+
+	@media (max-width: 991px) {
+		display: none;
+	}
 }
 
 .services__list {
 	padding: 0px 0 50px 40px;
-	background: #e7ddca;
+	// background: #e7ddca;
 	height: 100%;
+	@media (max-width: 991px) {
+		padding: 0;
+	}
 }
 
 .services-item__wrapper {
 	width: 75%;
 	height: 100%;
 	position: relative;
-	padding: 100px 0 0 0;
+	padding: 100px 0 220px 0;
+	background: url("../images/system_img/bg-services.png") center / cover no-repeat;
+	@media (max-width: 991px) {
+		padding: 20px 10px;
+		height: 65vh;
+		max-height: 65vh;
+		width: 100%;
+		overflow-y: auto;
+	}
 }
 
 .services-list {
@@ -73,14 +155,25 @@
 	&__items {
 		padding: 0 10px 0 0;
 		width: 100%;
-		max-height: calc(100vh - 150px);
+		max-height: 100%;
 		overflow-y: auto;
+
+		@media (max-width: 991px) {
+			overflow-y: unset;
+			max-height: auto;
+			padding: 0;
+		}
 	}
 
 	&__item {
 		display: flex;
 		justify-content: space-between;
 		margin: 0 0 30px 0;
+
+		@media (max-width: 991px) {
+			flex-direction: column;
+			justify-content: center;
+		}
 	}
 
 	&__item-left {
@@ -163,10 +256,14 @@
 	&__form {
 		// flex: 0 1 75%;
 		padding: 0 20px 50px 40px;
-		background: #e7ddca;
+		// background: #e7ddca;
 		display: flex;
 		flex-direction: column;
 		height: 100%;
+
+		@media (max-width: 991px) {
+			padding: 20px 10px 40px 10px;
+		}
 	}
 
 	&__form--tickets {
@@ -192,6 +289,10 @@
 
 		&--tel {
 			width: 235px;
+		}
+
+		@media (max-width: 991px) {
+			width: 280px;
 		}
 	}
 
@@ -240,5 +341,9 @@
 		text-transform: uppercase;
 
 		color: #a86e59;
+		@media (max-width: 991px) {
+			width: 280px;
+			margin: 0 0 20px 0;
+		}
 	}
 }

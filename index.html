@@ -22,14 +22,62 @@
 <body>
 	<!-- Внешняя оболочка -->
 	<div class="wrapper">
-		<div class="block-first-to-third">
 
+		<header class="header">
+			<div class="header__wrapper">
+				<p class="header__burger"><span></span></p>
+				<div class="header__lang">
+					<img src="images/system_img/header/lang.svg" alt="">
+					<p>RU</p>
+				</div>
+				<img class="header__logo" src="images/system_img/header/logo-white.png" alt="">
+				<nav class="header__menu">
+					<a href="" class="header__menu-item">О НАС</a>
+					<a href="" class="header__menu-item">СХЕМА</a>
+					<a href="" class="header__menu-item">УСЛУГИ</a>
+					<a href="" class="header__menu-item">АКЦИИ</a>
+					<a href="" class="header__menu-item">РАСПИСАНИЕ</a>
+					<a href="" class="header__menu-item">ТРЕНЕРА</a>
+					<a href="" class="header__menu-item">МАГАЗИН</a>
+					<a href="" class="header__menu-item">НОВОСТИ</a>
+				</nav>
+				<div class="header__right-block">
+					<img src="images/system_img/header/person.svg" alt="" class="header__person">
+					<div class="header__search-wrap">
+						<input type="text" id="search-input-desktop" class="header__search-input" placeholder="Найди меня">
+						<button class="header__search-btn"><img src="images/system_img/header/search-icon.svg"
+								alt=""></button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="burger__menu">
+			<a href="" class="header__menu-item">О НАС</a>
+			<a href="" class="header__menu-item">СХЕМА</a>
+			<a href="" class="header__menu-item">УСЛУГИ</a>
+			<a href="" class="header__menu-item">АКЦИИ</a>
+			<a href="" class="header__menu-item">РАСПИСАНИЕ</a>
+			<a href="" class="header__menu-item">ТРЕНЕРА</a>
+			<a href="" class="header__menu-item">МАГАЗИН</a>
+			<a href="" class="header__menu-item">НОВОСТИ</a>
+			<div class="header__search-wrap">
+				<input type="text" id="search-input-mobile" class="header__search-input" placeholder="Найди меня">
+				<button class="header__search-btn"><img src="images/system_img/header/search-icon.svg" alt=""></button>
+			</div>
+			<div class="header__lang">
+				<img src="images/system_img/header/lang.svg" alt="">
+				<p>RU</p>
+			</div>
+			<img src="images/system_img/header/person.svg" alt="" class="header__person">
+		</div>
+		<div class="block-first-to-third">
+			<img src="images/system_img/lines.png" alt="" class="first-third-lines">
 			<section class="first-block">
 				<div class="first-block__body">
 					<img src="images/system_img/logo-white-rectangle.png" alt="logo" class="first-block__logo">
 					<p class="first-block__text">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
 					<div class="first-block__button">
-						<button class="first-block__btn class-link" data-link="#second">ЗДЕСЬ</button>
+						<button class="first-block__btn class-link" id="link-first">ЗДЕСЬ</button>
 						<div class="first-block__btn-border"></div>
 					</div>
 				</div>
@@ -60,756 +108,1101 @@
 				</div>
 
 			</section>
+		</div>
 
-			<section class="services">
-				<div class="services__wrap">
-					<div class="title-service title-service_not-active title-service--tickets">
-						<h3 class="title-service__title">Абонементы</h3>
-					</div>
-					<div class="services-item__wrapper services-item__wrapper--tickets">
-						<img src="images/system_img/close.svg" class="services__btn-back">
+		<section class="services">
+			<div class="services__wrap">
+				<div class="services__title title">УСЛУГИ</div>
+				<div class="title-service title-service_not-active title-service--tickets">
+					<h3 class="title-service__title">Абонементы</h3>
+				</div>
+				<div class="services-item__wrapper services-item__wrapper--tickets">
+					<img src="images/system_img/close.svg" class="services__btn-back">
 
-						<div class="services__list services__list--tickets">
-							<div class="services-list__items">
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+					<div class="services__list services__list--tickets">
+						<div class="services-list__items">
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
 							</div>
 						</div>
-						<div class="services__form services__form--tickets">
-							<form>
-								<div class="services-form__input-wrapper">
-									<label for="input-fio" class="services-form__label">ФИО</label>
-									<input type="text" id="input-fio" class="services-form__input"
-										placeholder="Иванов Иван Иванович">
-								</div>
-								<div class="services-form__input-wrapper">
-									<label for="input-name" class="services-form__label">Имя тренера</label>
-									<input type="text" id="input-name" class="services-form__input"
-										placeholder="Иванов Иван Иванович">
-								</div>
-								<div class="services-form__input-wrapper services-form__input-wrapper--tel">
-									<label for="input-phone" class="services-form__label">Номер телефона</label>
-									<input type="tel" id="input-phone" class="services-form__input"
-										placeholder="+7 999 123-45-67">
-								</div>
-								<button class="services-form__btn" type="submit">отправить заявку</button>
-							</form>
-						</div>
 					</div>
-
-					<div class="title-service title-service_not-active title-service--class">
-						<h3 class="title-service__title">КОММЕРЧЕСКИЕ
-							КЛАССы</h3>
-
+					<div class="services__form services__form--tickets">
+						<form>
+							<div class="services-form__input-wrapper">
+								<label for="input-fio-1" class="services-form__label">ФИО</label>
+								<input type="text" id="input-fio-1" class="services-form__input"
+									placeholder="Иванов Иван Иванович">
+							</div>
+							<div class="services-form__input-wrapper">
+								<label for="input-name-1" class="services-form__label">Имя тренера</label>
+								<input type="text" id="input-name-1" class="services-form__input"
+									placeholder="Иванов Иван Иванович">
+							</div>
+							<div class="services-form__input-wrapper services-form__input-wrapper--tel">
+								<label for="input-phone-1" class="services-form__label">Номер телефона</label>
+								<input type="tel" id="input-phone-1" class="services-form__input"
+									placeholder="+7 999 123-45-67">
+							</div>
+							<button class="services-form__btn" type="submit">отправить заявку</button>
+						</form>
 					</div>
-					<div class="services-item__wrapper services-item__wrapper--class">
-						<img src="images/system_img/close.svg" class="services__btn-back">
+				</div>
 
-						<div class="services__list services__list--class">
-							<div class="services-list__items">
+				<div class="title-service title-service_not-active title-service--class">
+					<h3 class="title-service__title">КОММЕРЧЕСКИЕ
+						КЛАССы</h3>
 
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+				</div>
+				<div class="services-item__wrapper services-item__wrapper--class">
+					<img src="images/system_img/close.svg" class="services__btn-back">
+
+					<div class="services__list services__list--class">
+						<div class="services-list__items">
+
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
 							</div>
 						</div>
-						<div class="services__form services__form--class">
-							<form>
-								<div class="services-form__input-wrapper">
-									<label for="input-fio" class="services-form__label">ФИО</label>
-									<input type="text" id="input-fio" class="services-form__input"
-										placeholder="Иванов Иван Иванович">
-								</div>
-								<div class="services-form__input-wrapper">
-									<label for="input-name" class="services-form__label">Имя тренера</label>
-									<input type="text" id="input-name" class="services-form__input"
-										placeholder="Иванов Иван Иванович">
-								</div>
-								<div class="services-form__input-wrapper services-form__input-wrapper--tel">
-									<label for="input-phone" class="services-form__label">Номер телефона</label>
-									<input type="tel" id="input-phone" class="services-form__input"
-										placeholder="+7 999 123-45-67">
-								</div>
-								<button class="services-form__btn" type="submit">отправить заявку</button>
-							</form>
-						</div>
 					</div>
-					<div class="title-service title-service_not-active title-service--personal">
-						<h3 class="title-service__title">ПЕРСОНАЛЬНЫЕ
-							ТРЕНИРОВКИ</h3>
-
+					<div class="services__form services__form--class">
+						<form>
+							<div class="services-form__input-wrapper">
+								<label for="input-fio-2" class="services-form__label">ФИО</label>
+								<input type="text" id="input-fio-2" class="services-form__input"
+									placeholder="Иванов Иван Иванович">
+							</div>
+							<div class="services-form__input-wrapper">
+								<label for="input-name-2" class="services-form__label">Имя тренера</label>
+								<input type="text" id="input-name-2" class="services-form__input"
+									placeholder="Иванов Иван Иванович">
+							</div>
+							<div class="services-form__input-wrapper services-form__input-wrapper--tel">
+								<label for="input-phone-2" class="services-form__label">Номер телефона</label>
+								<input type="tel" id="input-phone-2" class="services-form__input"
+									placeholder="+7 999 123-45-67">
+							</div>
+							<button class="services-form__btn" type="submit">отправить заявку</button>
+						</form>
 					</div>
-					<div class="services-item__wrapper services-item__wrapper--personal">
-						<img src="images/system_img/close.svg" class="services__btn-back">
+				</div>
+				<div class="title-service title-service_not-active title-service--personal">
+					<h3 class="title-service__title">ПЕРСОНАЛЬНЫЕ
+						ТРЕНИРОВКИ</h3>
 
-						<div class="services__list services__list--personal">
-							<div class="services-list__items">
+				</div>
+				<div class="services-item__wrapper services-item__wrapper--personal">
+					<img src="images/system_img/close.svg" class="services__btn-back">
 
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+					<div class="services__list services__list--personal">
+						<div class="services-list__items">
+
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
 							</div>
 						</div>
-						<div class="services__form services__form--personal">
-							<form>
-								<div class="services-form__input-wrapper">
-									<label for="input-fio" class="services-form__label">ФИО</label>
-									<input type="text" id="input-fio" class="services-form__input"
-										placeholder="Иванов Иван Иванович">
-								</div>
-								<div class="services-form__input-wrapper">
-									<label for="input-name" class="services-form__label">Имя тренера</label>
-									<input type="text" id="input-name" class="services-form__input"
-										placeholder="Иванов Иван Иванович">
-								</div>
-								<div class="services-form__input-wrapper services-form__input-wrapper--tel">
-									<label for="input-phone" class="services-form__label">Номер телефона</label>
-									<input type="tel" id="input-phone" class="services-form__input"
-										placeholder="+7 999 123-45-67">
-								</div>
-								<button class="services-form__btn" type="submit">отправить заявку</button>
-							</form>
-						</div>
 					</div>
-					<div class="title-service title-service_not-active title-service--additional">
-						<h3 class="title-service__title">ДОПОЛНИТЕЛЬНЫЕ
-							УСЛУГИ</h3>
-
+					<div class="services__form services__form--personal">
+						<form>
+							<div class="services-form__input-wrapper">
+								<label for="input-fio-3" class="services-form__label">ФИО</label>
+								<input type="text" id="input-fio-3" class="services-form__input"
+									placeholder="Иванов Иван Иванович">
+							</div>
+							<div class="services-form__input-wrapper">
+								<label for="input-name-3" class="services-form__label">Имя тренера</label>
+								<input type="text" id="input-name-3" class="services-form__input"
+									placeholder="Иванов Иван Иванович">
+							</div>
+							<div class="services-form__input-wrapper services-form__input-wrapper--tel">
+								<label for="input-phone-3" class="services-form__label">Номер телефона</label>
+								<input type="tel" id="input-phone-3" class="services-form__input"
+									placeholder="+7 999 123-45-67">
+							</div>
+							<button class="services-form__btn" type="submit">отправить заявку</button>
+						</form>
 					</div>
-					<div class="services-item__wrapper services-item__wrapper--additional">
-						<img src="images/system_img/close.svg" class="services__btn-back">
+				</div>
+				<div class="title-service title-service_not-active title-service--additional">
+					<h3 class="title-service__title">ДОПОЛНИТЕЛЬНЫЕ
+						УСЛУГИ</h3>
 
-						<div class="services__list services__list--additional">
-							<div class="services-list__items">
+				</div>
+				<div class="services-item__wrapper services-item__wrapper--additional">
+					<img src="images/system_img/close.svg" class="services__btn-back">
 
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+					<div class="services__list services__list--additional">
+						<div class="services-list__items">
+
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
-								<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">Название тарифа 1</p>
-										<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">200 000 р.</p>
-										<button class="services-list__item-btn">заказать</button>
-									</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+							<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">Название тарифа 1</p>
+									<p class="services-list__item-subtitle">Его описание, характеристики и т.д.</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">200 000 р.</p>
+									<button class="services-list__item-btn">заказать</button>
 								</div>
 							</div>
 						</div>
-						<div class="services__form services__form--additional">
-							<form>
-								<div class="services-form__input-wrapper">
-									<label for="input-fio" class="services-form__label">ФИО</label>
-									<input type="text" id="input-fio" class="services-form__input"
-										placeholder="Иванов Иван Иванович">
-								</div>
-								<div class="services-form__input-wrapper">
-									<label for="input-name" class="services-form__label">Имя тренера</label>
-									<input type="text" id="input-name" class="services-form__input"
-										placeholder="Иванов Иван Иванович">
-								</div>
-								<div class="services-form__input-wrapper services-form__input-wrapper--tel">
-									<label for="input-phone" class="services-form__label">Номер телефона</label>
-									<input type="tel" id="input-phone" class="services-form__input"
-										placeholder="+7 999 123-45-67">
-								</div>
-								<button class="services-form__btn" type="submit">отправить заявку</button>
-							</form>
+					</div>
+					<div class="services__form services__form--additional">
+						<form>
+							<div class="services-form__input-wrapper">
+								<label for="input-fio-4" class="services-form__label">ФИО</label>
+								<input type="text" id="input-fio-4" class="services-form__input"
+									placeholder="Иванов Иван Иванович">
+							</div>
+							<div class="services-form__input-wrapper">
+								<label for="input-name-4" class="services-form__label">Имя тренера</label>
+								<input type="text" id="input-name-4" class="services-form__input"
+									placeholder="Иванов Иван Иванович">
+							</div>
+							<div class="services-form__input-wrapper services-form__input-wrapper--tel">
+								<label for="input-phone-4" class="services-form__label">Номер телефона</label>
+								<input type="tel" id="input-phone-4" class="services-form__input"
+									placeholder="+7 999 123-45-67">
+							</div>
+							<button class="services-form__btn" type="submit">отправить заявку</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="promotions">
+			<img src="images/system_img/promotions-bg.png" alt="" class="promotions-bg">
+			<div class="promotions__wrap">
+				<h3 class="promotions__title title">МЕРОПРИЯТИЯ И АКЦИИ</h3>
+				<div class="promotions__items">
+					<div class="item-promotion">
+						<img src="images/system_img/promotion.png" alt="">
+					</div>
+					<div class="item-promotion">
+						<img src="images/system_img/promotion.png" alt="">
+					</div>
+					<div class="item-promotion">
+						<img src="images/system_img/promotion.png" alt="">
+					</div>
+					<div class="item-promotion">
+						<img src="images/system_img/promotion.png" alt="">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="timetable">
+			<div class="timetable__wrap">
+				<h3 class="timetable__title title">МЕРОПРИЯТИЯ И АКЦИИ</h3>
+				<img src="images/system_img/timetable.png" alt="">
+			</div>
+		</section>
+
+		<section class="trainers">
+			<div class="trainers__wrap">
+				<h3 class="trainers__title title">ТРЕНЕРА</h3>
+				<div class="trainers-big">
+					<div class="item-big">
+						<div class="item-big__img"
+							style="background: #E7DCC9 url('images/system_img/trainers/big/01.png') center / cover no-repeat;">
+						</div>
+						<div class="item-big__body">
+							<p class="item-big__name">Юлия бахтеева</p>
+							<p class="item-big__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+								nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+								dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+								Excepteur sint occaecat</p>
+							<a href="trainer-popup" class="item-big__btn trainer-popup-link">ЗАПИСАТЬСЯ</a>
+						</div>
+					</div>
+					<div class="item-big">
+						<div class="item-big__img"
+							style="background: #E7DCC9 url('images/system_img/trainers/big/01.png') center / cover no-repeat;">
+						</div>
+						<div class="item-big__body">
+							<p class="item-big__name">Юлия бахтеева</p>
+							<p class="item-big__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+								nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+								dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+								Excepteur sint occaecat</p>
+							<button class="item-big__btn">ЗАПИСАТЬСЯ</button>
+						</div>
+					</div>
+					<div class="item-big">
+						<div class="item-big__img"
+							style="background: #E7DCC9 url('images/system_img/trainers/big/01.png') center / cover no-repeat;">
+						</div>
+						<div class="item-big__body">
+							<p class="item-big__name">Юлия бахтеева</p>
+							<p class="item-big__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+								nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+								dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+								Excepteur sint occaecat</p>
+							<button class="item-big__btn">ЗАПИСАТЬСЯ</button>
+						</div>
+					</div>
+					<div class="item-big">
+						<div class="item-big__img"
+							style="background: #E7DCC9 url('images/system_img/trainers/big/01.png') center / cover no-repeat;">
+						</div>
+						<div class="item-big__body">
+							<p class="item-big__name">Юлия бахтеева</p>
+							<p class="item-big__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+								nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+								dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+								Excepteur sint occaecat</p>
+							<button class="item-big__btn">ЗАПИСАТЬСЯ</button>
+						</div>
+					</div>
+					<div class="item-big">
+						<div class="item-big__img"
+							style="background: #E7DCC9 url('images/system_img/trainers/big/01.png') center / cover no-repeat;">
+						</div>
+						<div class="item-big__body">
+							<p class="item-big__name">Юлия бахтеева</p>
+							<p class="item-big__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+								eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+								nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+								dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+								Excepteur sint occaecat</p>
+							<button class="item-big__btn">ЗАПИСАТЬСЯ</button>
+						</div>
+					</div>
+				</div>
+				<div class="trainers-small">
+					<div class="item-small"
+						style="background: url('images/system_img/trainers/small/01.png') center / cover no-repeat;"></div>
+					<div class="item-small"
+						style="background: url('images/system_img/trainers/small/02.png') center / cover no-repeat;"></div>
+					<div class="item-small"
+						style="background: url('images/system_img/trainers/small/01.png') center / cover no-repeat;"></div>
+					<div class="item-small"
+						style="background: url('images/system_img/trainers/small/01.png') center / cover no-repeat;"></div>
+					<div class="item-small"
+						style="background: url('images/system_img/trainers/small/01.png') center / cover no-repeat;"></div>
+
+				</div>
+			</div>
+		</section>
+
+		<section class="try-train" id="tryTrain">
+			<div class="full__video" style="width: 100%; height: 100%;">
+				<div style="width: 100%; height: 100%;">
+
+
+					<div id="bgndVideo" class="player" style="width: 100%; height: 100%;"
+						data-property="{videoURL:'https://youtu.be/HQfF5XRVXjU',containment:'self',loop:true,showControls:false,autoPlay:true, mute:true, startAt:0, opacity:1}">
+					</div>
+				</div>
+			</div>
+			<div class="try-train__content">
+				<h3 class="try-train__title title">Пробная тренировка</h3>
+				<p class="try-train__text">Испытайте возможности клуба и получите специальные условия на покупку
+					абонемента</p>
+				<form class="try-train__form">
+					<input type="text" id="try-name" class="try-train__input" placeholder="Иванов Иван Иванович" required>
+					<input type="tel" id="try-tel" class="try-train__input" placeholder="+7 999 123-45-67" required>
+					<input type="checkbox" class="try-train__checkbox" id="try-check-first" value="personal" required>
+					<label class="try-train__checkbox-label" for="try-check-first">Согласен на обработку персональных
+						данных</label>
+					<input type="checkbox" class="try-train__checkbox" id="try-check-second" value="offert" required>
+					<label class="try-train__checkbox-label" for="try-check-second">С Офертой и Правилами клуба
+						ознакомлен</label>
+
+					<button type="submit" class="try-train__btn">ОТПРАВИТЬ</button>
+				</form>
+			</div>
+		</section>
+
+		<div class="store-news">
+			<section class="store" id="store">
+				<div class="store__wrapper">
+					<div class="store__column-img">
+						<div class="store__bg">
+							<img src="images/system_img/bg-online_store.png" alt="">
+						</div>
+					</div>
+					<div class="store__column-content">
+						<div class="store__content">
+							<h2 class="store__title title">ИНТЕРНЕТ-КАТАЛОГ termoland</h2>
+							<p class="store__text">Самые выгодные предложения на банные принадлежности</p>
+							<a href="" class="store__btn btn">в разработке</a>
 						</div>
 					</div>
 				</div>
 			</section>
+
+			<section class="news" id="news">
+
+
+				<div class="news__wrapper">
+					<h2 class="news__title title">новости termoland</h2>
+					<div class="news__content">
+						<div class="news__column-big">
+							<div class="news__row" id="news__row-1">
+								<!-- Item generated by JS on data.js -->
+							</div>
+							<div class="news__row" id="news__row-2">
+								<!-- Item generated by JS on data.js -->
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</section>
 		</div>
+
+		<footer class="footer">
+			<img src="images/system_img/footer/bg-top.png" alt="" class="bg-top">
+			<img src="images/system_img/footer/bg-footer.png" alt="" class="bg-line-foot">
+			<div class="footer__container">
+				<div class="footer__content">
+					<!-- <div class="footer__flex"> -->
+					<div class="footer__map"><img src="images/system_img/footer/map.png" alt=""></div>
+					<img src="images/system_img/logo-brown.png" alt="" class="footer__logo">
+					<!-- </div> -->
+
+					<!-- <div class="footer__flex"> -->
+					<div class="footer__documents">
+						<div class="footer__documents-item">
+							<p>Партнерам</p>
+							<a href=""><img src="images/system_img/footer/pdf-icon.svg" alt=""></a>
+						</div>
+						<div class="footer__documents-item">
+							<p>Правовая информация</p>
+							<a href=""><img src="images/system_img/footer/pdf-icon.svg" alt=""></a>
+						</div>
+					</div>
+					<div class="footer__links">
+						<div class="footer__link-item link-item">
+							<img src="images/system_img/footer/phone.svg" alt="" class="link-item__img">
+							<p class="link-item__text">Телефон</p>
+						</div>
+						<div class="footer__link-item link-item">
+							<img src="images/system_img/footer/email.svg" alt="" class="link-item__img">
+							<p class="link-item__text">Почта</p>
+						</div>
+						<div class="footer__link-item link-item">
+							<img src="images/system_img/footer/instagram.svg" alt="" class="link-item__img">
+							<p class="link-item__text">Instagram</p>
+						</div>
+						<div class="footer__link-item link-item">
+							<img src="images/system_img/footer/facebook.svg" alt="" class="link-item__img">
+							<p class="link-item__text">Facebook</p>
+						</div>
+						<div class="footer__link-item link-item">
+							<img src="images/system_img/footer/vk.svg" alt="" class="link-item__img">
+							<p class="link-item__text">ВКонтакте</p>
+						</div>
+					</div>
+					<!-- </div> -->
+
+
+				</div>
+				<div class="footer__line"></div>
+				<p class="footer__ps">*информация не является публичной офертой</p>
+			</div>
+		</footer>
+
+
+	</div>
+	<div id="news-popup" class="popup">
+		<div class="popup__wrapper">
+			<div id="news-popup-content" class="popup__content-block popup__content">
+
+			</div>
+		</div>
+	</div>
+
+	<div class="popup popup-first" id="first-popup">
+		<div class="popup-first__wrapper popup__wrapper">
+			<div class="popup-first__content popup__content">
+				<div class="popup-first__block">
+					<div class="popup-first__head">
+						<div class="popup-first__close close-popup">
+							<img src="images/system_img/close-popup.png" alt="">
+						</div>
+						<div class="popup-first__logo">
+							<img src="images/system_img/logo-white.png" alt="">
+						</div>
+					</div>
+					<h2 class="popup-first__title">твой курорт в самом центре Москвы</h2>
+					<p class="popup-first__text">Принято считать, что стресс — обычное состояние для жителя мегаполиса:
+						напряженная
+						работа, бесконечные пробки, недостаток сна и бешенный темп. Приводят к упадку сил, хронической
+						депрессии
+						и
+						постоянным эмоциональным качелям. Если пустить все на самотек, то упадок сил и эмоциональные качели
+						становятся постоянными спутниками.</p>
+					<a class="popup-first__tagline">НАША ЦЕЛЬ ПОБЕДИТЬ СТРЕСС</a>
+					<div class="popup-first__images">
+						<a href="" class="popup-first__img"><img src="images/content_img/popup-first/01.jpg" alt=""></a>
+						<a href="" class="popup-first__img"><img src="images/content_img/popup-first/02.jpg" alt=""></a>
+						<a href="" class="popup-first__img"><img src="images/content_img/popup-first/03.jpg" alt=""></a>
+						<a href="" class="popup-first__img"><img src="images/content_img/popup-first/04.jpg" alt=""></a>
+						<a href="" class="popup-first__img"><img src="images/content_img/popup-first/05.jpg" alt=""></a>
+						<a href="" class="popup-first__img"><img src="images/content_img/popup-first/06.jpg" alt=""></a>
+						<a href="" class="popup-first__img"><img src="images/content_img/popup-first/07.jpg" alt=""></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="sales-popup" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content-block popup__content">
+				<div class="popup__block">
+					<h2 id="sales-popup-title" class="popup__title">Название мероприятия/акции</h2>
+					<div class="popup__body">
+						<div class="popup__img">
+							<img id="sales-popup-img" src="images/content_img/popup-first/03.jpg" alt="">
+							<div>
+								<p id="sales-popup-limits" class="popup__date-info">18.02.2007 – 21.09.2009</p>
+								<!-- <p class="popup__date-info">0+</p> -->
+							</div>
+						</div>
+						<div class="popup__info">
+							<p id="sales-popup-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+								mattis orci vitae ex fermentum, sed dignissim metus vehicula. Nam tempus rhoncus interdum. Etiam
+								vel gravida velit, facilisis porttitor tortor. Cras ut nunc ipsum. Donec leo enim, sodales sed
+								ornare fermentum, lobortis id lacus. Suspendisse a suscipit ligula, at feugiat leo. Nam finibus
+								dictum rutrum. Curabitur ac pulvinar magna, euismod sodales orci. In a lacus sit amet magna
+								ultrices sagittis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tincidunt
+								ornare dolor at vehicula. Quisque dolor erat, tristique a nulla vitae, posuere tristique lacus.
+								Aenean efficitur lorem leo, ac dignissim purus rhoncus ac. Praesent maximus diam a vehicula
+								pharetra.
+
+								Sed rutrum erat eu lectus suscipit ornare. In scelerisque molestie dolor a porta. Integer
+								pellentesque et tortor vel accumsan. Etiam vestibulum, leo eget hendrerit suscipit, quam nulla
+								placerat justo, vitae finibus risus dui a magna. Vestibulum in molestie metus. Pellentesque
+								convallis vel dui eget ultricies. Phasellus scelerisque risus eleifend tempus blandit. Etiam
+								vehicula quam odio, a aliquet nunc faucibus at. Nullam vestibulum, justo id molestie accumsan,
+								nibh sem lacinia magna, sit amet vulputate nisl ligula at ex. Phasellus convallis erat sed ex
+								tempor cursus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+								mus. Integer ex nisl, pharetra in eros vitae, blandit vulputate sapien. In nisi justo, bibendum
+								a eleifend in, sodales ac ligula.
+							</p>
+						</div>
+					</div>
+					<a href="#" class="popup__btn btn close-popup">Классная акция!</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="trainer-popup" class="popup">
+
+		<div class="popup__wrapper">
+			<div class="popup__content-block popup__content">
+				<div class="popup__block">
+					<div class="popup-trainer__close close-popup">
+						<img src="images/system_img/close-popup-brown.png" alt="">
+					</div>
+					<h2 id="traier-popup-title" class="popup__trainer-title">ЮЛИЯ БАХТЕЕВА</h2>
+					<img src="images/system_img/trainers/small/01.png" alt="" class="popup__img-traier">
+					<p class="popup__text-trainer">оставьте свои данные</p>
+					<input type="text" id="train-name" class="try-train__input" placeholder="Иванов Иван Иванович" required>
+					<input type="tel" id="train-tel" class="try-train__input" placeholder="+7 999 123-45-67" required>
+					<button type="submit" class="try-train__btn">ЗАПИСАТЬСЯ</button>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 
@@ -817,7 +1210,10 @@
 	<!-- Jquery -->
 	<script src="js/jquery-3.5.0.min.js"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script src="js/Yplayer.js"></script>
+
 	<!-- Main script file -->
 	<script src="js/script.js"></script>
 </body>

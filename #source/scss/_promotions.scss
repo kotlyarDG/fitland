@@ -1,0 +1,105 @@
+.promotions {
+	width: 100%;
+	position: relative;
+	z-index: 6;
+	&-bg {
+		position: absolute;
+		top: -300px;
+		left: 0;
+		width: 100%;
+		height: calc(100% + 300px);
+
+		@media (max-width: 768px) {
+			top: -50px;
+			height: calc(100% + 50px);
+		}
+	}
+	&__wrap {
+		padding: 30px 20px;
+		position: relative;
+		z-index: 2;
+	}
+
+	&__title {
+		color: #a86e59;
+	}
+
+	&__items {
+		position: relative;
+
+		.slick-track {
+			// display: flex;
+			// justify-content: center;
+		}
+
+		.slick-slide {
+			display: flex;
+			justify-content: center;
+		}
+
+		.slick-arrow {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 50;
+			font-size: 0;
+			width: 40px;
+			height: 40px;
+			transition: 0.3s;
+		}
+
+		.slick-arrow.slick-next {
+			right: 30px;
+			background: url("../images/system_img/arr-next.svg");
+
+			&:hover {
+				transform: translateY(-50%) rotate(360deg);
+			}
+
+			@media (max-width: 768px) {
+				right: 0;
+			}
+		}
+		.slick-arrow.slick-prev {
+			left: 30px;
+			background: url("../images/system_img/arr-prev.svg");
+
+			&:hover {
+				transform: translateY(-50%) rotate(-360deg);
+			}
+
+			@media (max-width: 768px) {
+				left: 0px;
+			}
+		}
+
+		.slick-dots {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 10px 0 0 0;
+		}
+		.slick-dots li {
+			width: 10px;
+			height: 10px;
+			background: #cb7c61;
+			border-radius: 50%;
+			margin: 0 10px;
+			cursor: pointer;
+		}
+		/* Активная точка */
+		.slick-dots li.slick-active {
+			background: #9e5a42;
+		}
+		/* Элемент точки */
+		.slick-dots li button {
+			font-size: 0;
+			background: none;
+		}
+	}
+}
+.item-promotion {
+	img {
+		max-width: 100%;
+	}
+}

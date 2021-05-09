@@ -1,0 +1,18 @@
+.timetable {
+	background: #e8ddcb;
+
+	&__wrap {
+		padding: 30px 20px;
+		position: relative;
+		z-index: 2;
+	}
+
+	&__title {
+		color: #a86e59;
+		margin: 0 0 20px 0;
+	}
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+}
