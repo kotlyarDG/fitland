@@ -6,6 +6,7 @@ $(document).ready(function () {
 		$('html, body').animate({
 			scrollTop: $(blockId).offset().top
 		}, 'slow');
+		$('.header__burger,.burger__menu,.header').removeClass('_active');
 		e.preventDefault();
 	})
 

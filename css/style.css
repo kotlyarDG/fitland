@@ -1869,6 +1869,12 @@ input[type="checkbox"]:checked + label:after {
   color: #a86e59;
 }
 
+@media (max-width: 768px) {
+  .store__title {
+    text-align: center;
+  }
+}
+
 .store__text {
   margin: 20px 0 40px 0;
   font-size: 20px;

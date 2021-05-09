@@ -60,6 +60,10 @@
 		z-index: 11;
 		text-align: left;
 		color: #a86e59;
+
+		@media (max-width: 768px) {
+			text-align: center;
+		}
 	}
 
 	&__text {
