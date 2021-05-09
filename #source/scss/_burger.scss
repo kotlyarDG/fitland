@@ -104,6 +104,10 @@ $time-animation: 0.4s;
 
 		.header__menu-item {
 			display: block;
+
+			&:after {
+				width: 50px;
+			}
 		}
 
 		.header__menu-link.active:after {

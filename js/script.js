@@ -1,6 +1,40 @@
 // Проверка, загрузилась ли страница
 $(document).ready(function () {
 
+	$('.scroll-link').click(function (e) {
+		let blockId = $(this).attr('href');
+		$('html, body').animate({
+			scrollTop: $(blockId).offset().top
+		}, 'slow');
+		e.preventDefault();
+	})
+
+	const section = $('.section'),
+		nav = $('.menu'),
+		navHeight = nav.outerHeight(); // получаем высоту навигации 
+
+	// поворот экрана 
+	window.addEventListener('orientationchange', function () {
+		navHeight = nav.outerHeight();
+	}, false);
+
+	$(window).on('scroll', function () {
+		const position = $(this).scrollTop();
+
+		section.each(function () {
+			const top = $(this).offset().top - navHeight - 155,
+				bottom = top + $(this).outerHeight();
+
+			if (position >= top && position <= bottom) {
+				nav.find('a').removeClass('active');
+				section.removeClass('active');
+
+				$(this).addClass('active');
+				nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
+			}
+		});
+	});
+
 	$('.trainer-popup-link').click(function (e) {
 		$('#trainer-popup').addClass('open');
 		e.preventDefault();
