@@ -217,7 +217,7 @@ h1, h2, h3, h4, h5, h6 {
 .header__menu-item:after {
   content: "";
   width: 60%;
-  height: 3px;
+  height: 2px;
   background: #fff;
   display: none;
   position: absolute;
