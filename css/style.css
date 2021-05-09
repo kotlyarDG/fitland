@@ -3006,3 +3006,19 @@ input[type="checkbox"]:checked + label:after {
   top: 0px;
   left: 0px;
 }
+
+.body-sched th:first-child {
+  font-size: 40px !important;
+  font-weight: bold !important;
+  display: none !important;
+}
+
+.sl-date .slide {
+  background: #f01 !important;
+  color: #0f1 !important;
+}
+
+.select-nav {
+  margin-left: 10% !important;
+  margin-right: 5% !important;
+}
