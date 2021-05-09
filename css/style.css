@@ -211,6 +211,7 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   color: #ffffff;
   margin: 0 10px;
+  position: relative;
 }
 
 .header__menu-item:after {
@@ -218,8 +219,26 @@ h1, h2, h3, h4, h5, h6 {
   width: 60%;
   height: 3px;
   background: #fff;
-  margin: 5px 0 0 0;
   display: none;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media (max-width: 1370px) {
+  .header__menu-item:after {
+    left: 0;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+  }
+}
+
+.header__menu-item:hover:after {
+  display: block;
 }
 
 .header__menu-item.active:after {
