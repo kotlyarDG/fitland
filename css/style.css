@@ -3017,18 +3017,50 @@ input[type="checkbox"]:checked + label:after {
   cursor: pointer;
 }
 
-.body-sched th:first-child {
-  font-size: 40px !important;
-  font-weight: bold !important;
-  display: none !important;
+.slider-date .bx-wrapper .bx-controls-direction a {
+  background-color: #a86e59 !important;
 }
 
-.sl-date .slide {
-  background: #f01 !important;
-  color: #0f1 !important;
+.c-hamburger span,
+.c-hamburger span:before,
+.c-hamburger span:after {
+  background: #a86e59 !important;
 }
 
-.select-nav {
-  margin-left: 10% !important;
-  margin-right: 5% !important;
+.item-dw_rz.w_rz a:before {
+  width: 30px !important;
+  height: 30px !important;
+  margin-top: -15px !important;
+  background: url("../images/system_img/timetable-img-1.svg") center/contain no-repeat !important;
+}
+
+.item-dw_rz.d_rz a:before {
+  width: 30px !important;
+  height: 30px !important;
+  margin-top: -15px !important;
+  background: url("../images/system_img/timetable-img-2.svg") center/contain no-repeat !important;
+}
+
+.body-sched th {
+  color: #736e64 !important;
+}
+
+.days-week_rz {
+  padding-right: 15px !important;
+}
+
+.nav-schedule {
+  background: #e7dcc9 !important;
+}
+
+.slider-date .bx-wrapper .bx-controls-direction a {
+  top: 4px !important;
+}
+
+.slider-date .bx-wrapper .bx-prev {
+  left: 5px !important;
+}
+
+.slider-date .bx-wrapper .bx-next {
+  right: 5px !important;
 }
