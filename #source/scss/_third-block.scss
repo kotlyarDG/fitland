@@ -9,8 +9,6 @@
 		background: url("../images/system_img/bg-third.png");
 	}
 
-	// display: none;
-
 	.title {
 		margin: 0 0 100px 0;
 
@@ -83,23 +81,33 @@
 	align-self: center;
 
 	.slick-dots {
-		display: flex;
-		margin: 0 30px;
+		display: flex !important;
+		margin: 0 30px !important;
+		position: static !important;
+		width: auto !important;
+	}
+
+	.slick-dots li {
+		height: auto !important;
+		width: auto !important;
+		margin: 0 auto;
 	}
 
 	.slick-dots li button {
-		font-size: 20px;
-		line-height: 24px;
-		text-transform: lowercase;
-		background: none;
-		margin: 0 10px;
-		color: #e7dcc9;
-		transition: 0.2s;
-		position: relative;
-		z-index: 11;
+		font-size: 20px !important;
+		line-height: 24px !important;
+		text-transform: lowercase !important;
+		background: none !important;
+		margin: 0 10px !important;
+		color: #e7dcc9 !important;
+		transition: 0.2s !important;
+		position: relative !important;
+		z-index: 11 !important;
+		border: none !important;
+		height: auto !important;
 	}
 	.slick-dots li.slick-active button {
-		font-weight: bold;
+		font-weight: bold !important;
 	}
 
 	@media (max-width: 768px) {

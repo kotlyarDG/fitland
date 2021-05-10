@@ -640,6 +640,7 @@ h1, h2, h3, h4, h5, h6 {
 .second img {
   margin: 0 auto;
   display: block;
+  max-width: 90%;
 }
 
 .third {
@@ -750,28 +751,38 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .dots-wrapper .slick-dots {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0 30px;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  margin: 0 30px !important;
+  position: static !important;
+  width: auto !important;
+}
+
+.dots-wrapper .slick-dots li {
+  height: auto !important;
+  width: auto !important;
+  margin: 0 auto;
 }
 
 .dots-wrapper .slick-dots li button {
-  font-size: 20px;
-  line-height: 24px;
-  text-transform: lowercase;
-  background: none;
-  margin: 0 10px;
-  color: #e7dcc9;
-  -webkit-transition: 0.2s;
-  -o-transition: 0.2s;
-  transition: 0.2s;
-  position: relative;
-  z-index: 11;
+  font-size: 20px !important;
+  line-height: 24px !important;
+  text-transform: lowercase !important;
+  background: none !important;
+  margin: 0 10px !important;
+  color: #e7dcc9 !important;
+  -webkit-transition: 0.2s !important;
+  -o-transition: 0.2s !important;
+  transition: 0.2s !important;
+  position: relative !important;
+  z-index: 11 !important;
+  border: none !important;
+  height: auto !important;
 }
 
 .dots-wrapper .slick-dots li.slick-active button {
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
 @media (max-width: 768px) {
@@ -1330,12 +1341,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .promotions__items .slick-slide {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
 }
 
 .promotions__items .slick-arrow {
@@ -1397,7 +1408,10 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 10px 0 0 0;
+  margin: 10px 0 0 0 !important;
+  display: flex !important;
+  position: static !important;
+  width: auto !important;
 }
 
 .promotions__items .slick-dots li {
@@ -1457,26 +1471,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .trainers-big .slick-slide {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 
 .item-big {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 
 @media (max-width: 768px) {
   .item-big {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
   }
 }
 
@@ -2832,6 +2846,7 @@ input[type="checkbox"]:checked + label:after {
 
 .popup-first__close {
   cursor: pointer;
+  margin: 15px 0 0 15px;
 }
 
 .popup-first__logo {
@@ -2942,6 +2957,7 @@ input[type="checkbox"]:checked + label:after {
 #trainer-popup .try-train__input,
 #trainer-popup .try-train__btn {
   min-height: 50px;
+  margin: 15px auto;
 }
 
 #trainer-popup .popup__content {
@@ -2949,16 +2965,8 @@ input[type="checkbox"]:checked + label:after {
 }
 
 #trainer-popup .popup__block {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: block;
+  text-align: center;
   position: relative;
   padding: 30px 0 0 0;
   min-height: 550px;
@@ -2989,6 +2997,7 @@ input[type="checkbox"]:checked + label:after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  min-height: 45px;
 }
 
 #trainer-popup .popup__trainer-title:after {
@@ -3005,6 +3014,7 @@ input[type="checkbox"]:checked + label:after {
   position: absolute;
   top: 0px;
   left: 0px;
+  cursor: pointer;
 }
 
 .body-sched th:first-child {

@@ -50,8 +50,25 @@ $(document).ready(function () {
 	});
 
 	$('#trainer-popup').find('.close-popup').click(function (e) {
-		console.log('news close')
+		console.log('trainer close')
 		$('#trainer-popup').removeClass('open');
+		e.preventDefault();
+	})
+
+	$('.sales-popup-link').click(function (e) {
+		$('#sales-popup').addClass('open');
+		e.preventDefault();
+	});
+
+	$('#sales-popup').click(function (e) {
+		if (!e.target.closest('.popup__content')) {
+			$('#sales-popup').removeClass('open');
+		}
+	});
+
+	$('#sales-popup').find('.close-popup').click(function (e) {
+		console.log('sales close')
+		$('#sales-popup').removeClass('open');
 		e.preventDefault();
 	})
 

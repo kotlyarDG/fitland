@@ -366,6 +366,7 @@ $xs: 768px;
 
 	&__close {
 		cursor: pointer;
+		margin: 15px 0 0 15px;
 	}
 
 	&__logo {
@@ -464,14 +465,14 @@ $xs: 768px;
 	.try-train__input,
 	.try-train__btn {
 		min-height: 50px;
+		margin: 15px auto;
 	}
 	.popup__content {
 		padding: 0;
 	}
 	.popup__block {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+		display: block;
+		text-align: center;
 		position: relative;
 		padding: 30px 0 0 0;
 		min-height: 550px;
@@ -497,6 +498,7 @@ $xs: 768px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		min-height: 45px;
 
 		&:after {
 			content: "";
@@ -513,6 +515,7 @@ $xs: 768px;
 		position: absolute;
 		top: 0px;
 		left: 0px;
+		cursor: pointer;
 	}
 }
 
