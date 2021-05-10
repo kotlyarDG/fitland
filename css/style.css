@@ -2942,6 +2942,21 @@ input[type="checkbox"]:checked + label:after {
   width: 286px;
 }
 
+@media (max-width: 1020px) {
+  #sales-popup .popup__title {
+    font-size: 20px;
+  }
+  #sales-popup .popup__body {
+    display: block;
+  }
+  #sales-popup .popup__img {
+    display: block;
+  }
+  #sales-popup .popup__img img {
+    margin: 0 auto 15px auto;
+  }
+}
+
 #trainer-popup .popup__wrapper {
   background: #e7dcc9;
   width: 500px;
@@ -3063,4 +3078,8 @@ input[type="checkbox"]:checked + label:after {
 
 .slider-date .bx-wrapper .bx-next {
   right: 5px !important;
+}
+
+.item-sel::before {
+  background: #a86e59 !important;
 }
