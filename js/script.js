@@ -13,8 +13,8 @@ $(document).ready(function () {
 	})
 
 	const section = $('.section'),
-		nav = $('.menu'),
-		navHeight = nav.outerHeight(); // получаем высоту навигации 
+		nav = $('.menu');
+	let navHeight = nav.outerHeight(); // получаем высоту навигации 
 
 	// поворот экрана 
 	window.addEventListener('orientationchange', function () {

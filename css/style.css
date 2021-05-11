@@ -2369,6 +2369,13 @@ input[type="checkbox"]:checked + label:after {
   max-width: 100%;
 }
 
+.footer__map-text {
+  font-size: 14px;
+  line-height: 17px;
+  color: #9e5a42;
+  margin: 10px 0 0 0;
+}
+
 .footer__logo {
   height: 135px;
   width: 180px;
@@ -2464,7 +2471,7 @@ input[type="checkbox"]:checked + label:after {
 .bg-line-foot {
   position: absolute;
   z-index: 1;
-  bottom: 20%;
+  bottom: 31%;
   left: 0;
 }
 
