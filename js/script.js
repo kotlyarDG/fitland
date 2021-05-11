@@ -1,4 +1,6 @@
 // Проверка, загрузилась ли страница
+const serverUrl = 'https://www.landback.site/fitland';
+
 $(document).ready(function () {
 
 	getPromotions();
@@ -172,10 +174,6 @@ $(document).ready(function () {
 	})
 
 
-	$('.promotions__items').slick({
-		arrows: true,
-		dots: true
-	})
 
 
 	setTimeout(function () {
@@ -187,79 +185,79 @@ $(document).ready(function () {
 });
 
 function getTrainers() {
-	let trainers = [
-		{
-			"id": 1,
-			"name": "Тренер 1",
-			"description": "Описание тренера 1",
-			"photo": "Фото тренера 1",
-			"order": 1
-		},
-		{
-			"id": 2,
-			"name": "Тренер 2",
-			"description": "Описание тренера 2",
-			"photo": "Фото тренера 2",
-			"order": 1
-		}
-	]
 
-	for (let trainer of trainers) {
-		$('.trainers-big').append(
-			`
-			<div class="item-big">
-						<div class="item-big__img"
-							style="background: #E7DCC9 ${trainer['photo']} center / cover no-repeat;">
-						</div>
-						<div class="item-big__body">
-							<p class="item-big__name">${trainer['name']}</p>
-							<p class="item-big__text">${trainer['description']}</p>
-							<a data-id="${trainer['id']}" href="trainer-popup" class="item-big__btn trainer-popup-link">ЗАПИСАТЬСЯ</a>
-						</div>
-					</div>
-			`
-		);
-		$('.trainers-small').append(
-			`
-			<div class="item-small"
-						style="background: ${trainer['photo']} center / cover no-repeat;"></div>
-			`
-		);
-	}
+	$.ajax({
+		type: "GET",
+		url: `${serverUrl}/trainers`,
+		success: function (data) {
+			console.log(data);
+			let trainers = data;
 
-	$('.trainers-big').slick({
-		arrows: false,
-		dots: false,
-		asNavFor: '.trainers-small'
-
-	})
-
-
-	$('.trainers-small').slick({
-		arrows: false,
-		dots: false,
-		slidesToShow: 1,
-		centerMode: true,
-		infinite: true,
-		centerPadding: '40%',
-		focusOnSelect: true,
-		asNavFor: '.trainers-big',
-
-		responsive: [
-			{
-				breakpoint: 769,
-				settings: {
-					centerPadding: '35%',
-
-				}
+			for (let trainer of trainers) {
+				$('.trainers-big').append(
+					`
+					<div class="item-big">
+								<div class="item-big__img"
+									style="background: #E7DCC9 ${trainer['photo']} center / cover no-repeat;">
+								</div>
+								<div class="item-big__body">
+									<p class="item-big__name">${trainer['fullname']}</p>
+									<p class="item-big__text">${trainer['description']}</p>
+									<a data-id="${trainer['id']}" href="trainer-popup" class="item-big__btn trainer-popup-link">ЗАПИСАТЬСЯ</a>
+								</div>
+							</div>
+					`
+				);
+				$('.trainers-small').append(
+					`
+					<div class="item-small"
+								style="background: ${trainer['photo']} center / cover no-repeat;"></div>
+					`
+				);
 			}
-		]
-	})
 
-	$('.trainer-popup-link').click(function (e) {
-		openTrainerModal(trainers.find(x => x.id == $(this).data('id')));
-		e.preventDefault();
+			$('.trainers-big').slick({
+				arrows: false,
+				dots: false,
+				asNavFor: '.trainers-small'
+
+			})
+
+
+			$('.trainers-small').slick({
+				arrows: false,
+				dots: false,
+				slidesToShow: 1,
+				centerMode: true,
+				infinite: true,
+				centerPadding: '40%',
+				focusOnSelect: true,
+				asNavFor: '.trainers-big',
+
+				responsive: [
+					{
+						breakpoint: 769,
+						settings: {
+							centerPadding: '35%',
+
+						}
+					}
+				]
+			})
+
+			$('.trainer-popup-link').click(function (e) {
+				openTrainerModal(trainers.find(x => x.id == $(this).data('id')));
+				e.preventDefault();
+			});
+		},
+		error: function (errMsg) {
+			console.log("Error: ", errMsg)
+		},
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
 	});
+
+
 
 
 }
@@ -300,42 +298,43 @@ function openTrainerModal(trainer) {
 }
 
 function getTickets() {
-	let tickets = [
-		{
-			"id": 1,
-			"title": "ticket 1",
-			"description": "des 1",
-			"price": 100
+
+	$.ajax({
+		type: "GET",
+		url: `${serverUrl}/aboniments`,
+		success: function (data) {
+			let tickets = data;
+
+			for (let item of tickets) {
+				$('.services__list--tickets').find('.services-list__items').append(
+					`
+					<div class="services-list__item">
+										<div class="services-list__item-left">
+											<p class="services-list__item-title">${item['title']}</p>
+											<p class="services-list__item-subtitle">${item['description']}</p>
+										</div>
+										<div class="services-list__item-right">
+											<p class="services-list__item-price">${item['price']} р.</p>
+											<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+										</div>
+									</div>
+					`
+				);
+
+			};
+
+			$('.services__list--tickets').find('.services-list__item-btn').click(function () {
+				openFormTicket(tickets.find(x => x.id == $(this).data('id')));
+			})
 		},
-		{
-			"id": 2,
-			"title": "ticket 2",
-			"description": "des 2",
-			"price": 200
-		}
-	];
+		error: function (errMsg) {
+			console.log("Error: ", errMsg)
+		},
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+	});
 
-	for (let item of tickets) {
-		$('.services__list--tickets').find('.services-list__items').append(
-			`
-			<div class="services-list__item">
-								<div class="services-list__item-left">
-									<p class="services-list__item-title">${item['title']}</p>
-									<p class="services-list__item-subtitle">${item['description']}</p>
-								</div>
-								<div class="services-list__item-right">
-									<p class="services-list__item-price">${item['price']} р.</p>
-									<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
-								</div>
-							</div>
-			`
-		);
 
-	};
-
-	$('.services__list--tickets').find('.services-list__item-btn').click(function () {
-		openFormTicket(tickets.find(x => x.id == $(this).data('id')));
-	})
 
 }
 
@@ -389,27 +388,41 @@ function getClass() {
 		}
 	];
 
-	for (let item of classes) {
-		$('.services__list--class').find('.services-list__items').append(
-			`
-			<div class="services-list__item">
-								<div class="services-list__item-left">
-									<p class="services-list__item-title">${item['title']}</p>
-									<p class="services-list__item-subtitle">${item['description']}</p>
-								</div>
-								<div class="services-list__item-right">
-									<p class="services-list__item-price">${item['price']} р.</p>
-									<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
-								</div>
-							</div>
-			`
-		);
+	$.ajax({
+		type: "GET",
+		url: `${serverUrl}/comm_classes`,
+		success: function (data) {
+			console.log(data);
+			let classes = data;
+			for (let item of classes) {
+				$('.services__list--class').find('.services-list__items').append(
+					`
+					<div class="services-list__item">
+										<div class="services-list__item-left">
+											<p class="services-list__item-title">${item['title']}</p>
+											<p class="services-list__item-subtitle">${item['description']}</p>
+										</div>
+										<div class="services-list__item-right">
+											<p class="services-list__item-price">${item['price']} р.</p>
+											<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+										</div>
+									</div>
+					`
+				);
 
-	};
+			};
 
-	$('.services__list--class').find('.services-list__item-btn').click(function () {
-		openFormClass(classes.find(x => x.id == $(this).data('id')));
-	})
+			$('.services__list--class').find('.services-list__item-btn').click(function () {
+				openFormClass(classes.find(x => x.id == $(this).data('id')));
+			})
+
+		},
+		error: function (errMsg) {
+			console.log("Error: ", errMsg)
+		},
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+	});
 
 }
 
@@ -462,42 +475,41 @@ function openFormClass(item) {
 
 
 function getPersonals() {
-	let personals = [
-		{
-			"id": 1,
-			"title": "ticket 1",
-			"description": "des 1",
-			"price": 100
+	$.ajax({
+		type: "GET",
+		url: `${serverUrl}/personal_trainings`,
+		success: function (data) {
+			console.log(data);
+			let personals = data;
+
+			for (let item of personals) {
+				$('.services__list--personal').find('.services-list__items').append(
+					`
+				<div class="services-list__item">
+									<div class="services-list__item-left">
+										<p class="services-list__item-title">${item['title']}</p>
+										<p class="services-list__item-subtitle">${item['description']}</p>
+									</div>
+									<div class="services-list__item-right">
+										<p class="services-list__item-price">${item['price']} р.</p>
+										<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+									</div>
+								</div>
+				`
+				);
+
+			};
+
+			$('.services__list--personal').find('.services-list__item-btn').click(function () {
+				openFormPersonal(personals.find(x => x.id == $(this).data('id')));
+			})
 		},
-		{
-			"id": 2,
-			"title": "ticket 2",
-			"description": "des 2",
-			"price": 200
-		}
-	];
-
-	for (let item of personals) {
-		$('.services__list--personal').find('.services-list__items').append(
-			`
-			<div class="services-list__item">
-								<div class="services-list__item-left">
-									<p class="services-list__item-title">${item['title']}</p>
-									<p class="services-list__item-subtitle">${item['description']}</p>
-								</div>
-								<div class="services-list__item-right">
-									<p class="services-list__item-price">${item['price']} р.</p>
-									<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
-								</div>
-							</div>
-			`
-		);
-
-	};
-
-	$('.services__list--personal').find('.services-list__item-btn').click(function () {
-		openFormPersonal(personals.find(x => x.id == $(this).data('id')));
-	})
+		error: function (errMsg) {
+			console.log("Error: ", errMsg)
+		},
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+	});
 
 }
 
@@ -541,42 +553,43 @@ function openFormPersonal(item) {
 
 
 function getAdditionals() {
-	let additionals = [
-		{
-			"id": 1,
-			"title": "ticket 1",
-			"description": "des 1",
-			"price": 100
+
+	$.ajax({
+		type: "GET",
+		url: `${serverUrl}/add_services`,
+		success: function (data) {
+			console.log(data);
+			let additionals = data;
+
+			for (let item of additionals) {
+				$('.services__list--additional').find('.services-list__items').append(
+					`
+					<div class="services-list__item">
+										<div class="services-list__item-left">
+											<p class="services-list__item-title">${item['title']}</p>
+											<p class="services-list__item-subtitle">${item['description']}</p>
+										</div>
+										<div class="services-list__item-right">
+											<p class="services-list__item-price">${item['price']} р.</p>
+											<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+										</div>
+									</div>
+					`
+				);
+
+			};
+
+			$('.services__list--additional').find('.services-list__item-btn').click(function () {
+				openFormAdditional(additionals.find(x => x.id == $(this).data('id')));
+			})
 		},
-		{
-			"id": 2,
-			"title": "ticket 2",
-			"description": "des 2",
-			"price": 200
-		}
-	];
+		error: function (errMsg) {
+			console.log("Error: ", errMsg)
+		},
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+	});
 
-	for (let item of additionals) {
-		$('.services__list--additional').find('.services-list__items').append(
-			`
-			<div class="services-list__item">
-								<div class="services-list__item-left">
-									<p class="services-list__item-title">${item['title']}</p>
-									<p class="services-list__item-subtitle">${item['description']}</p>
-								</div>
-								<div class="services-list__item-right">
-									<p class="services-list__item-price">${item['price']} р.</p>
-									<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
-								</div>
-							</div>
-			`
-		);
-
-	};
-
-	$('.services__list--additional').find('.services-list__item-btn').click(function () {
-		openFormAdditional(additionals.find(x => x.id == $(this).data('id')));
-	})
 
 }
 
@@ -616,45 +629,44 @@ function openFormAdditional(item) {
 
 
 function getPromotions() {
-	let promotions = [
-		{
-			"id": 1,
-			"title": "Название 1",
-			"description": "Описание 1",
-			"order_num": 1,
-			"date_start": "2021-05-05T21:00:00.000Z",
-			"date_end": "2021-05-27T21:00:00.000Z",
-			"image_mini": "Картинка мини",
-			"image_full": "Картинка полная"
+
+	$.ajax({
+		type: "GET",
+		url: `${serverUrl}/promotions`,
+		success: function (data) {
+			console.log(data);
+			let promotions = data;
+
+			for (let promotion of promotions) {
+				$('.promotions__items').append(
+					`
+					<a data-id="${promotion['id']}" class="item-promotion sales-popup-link">
+								<img src="${promotion['image_full']}" alt=""> 
+								<p>${promotion['image_full']}</p>
+							</a>
+					`
+				)
+			}
+
+			$('.sales-popup-link').click(function (e) {
+				let item = promotions.find(x => x.id == $(this).data('id'));
+				openPromotionModal(item);
+				e.preventDefault();
+			})
+
+
+			$('.promotions__items').slick({
+				arrows: true,
+				dots: true
+			})
 		},
-		{
-			"id": 2,
-			"title": "Название 2",
-			"description": "Описание 2",
-			"order_num": 1,
-			"date_start": "2021-05-05T21:00:00.000Z",
-			"date_end": "2021-05-27T21:00:00.000Z",
-			"image_mini": "Картинка мини",
-			"image_full": "Картинка полная"
-		}
-	];
+		error: function (errMsg) {
+			console.log("Error: ", errMsg)
+		},
+		contentType: "application/json; charset=utf-8",
+		dataType: "json",
+	});
 
-	for (let promotion of promotions) {
-		$('.promotions__items').append(
-			`
-			<a data-id="${promotion['id']}" class="item-promotion sales-popup-link">
-						<img src="${promotion['image_full']}" alt=""> 
-						<p>${promotion['image_full']}</p>
-					</a>
-			`
-		)
-	}
-
-	$('.sales-popup-link').click(function (e) {
-		let item = promotions.find(x => x.id == $(this).data('id'));
-		openPromotionModal(item);
-		e.preventDefault();
-	})
 }
 
 function formatDate(date) {
@@ -711,7 +723,7 @@ function openPromotionModal(promotion) {
 function getNews() {
 	$.ajax({
 		type: "GET",
-		url: 'https://termoland.herokuapp.com/v1/news/list',
+		url: `${serverUrl}/news`,
 		success: function (data) {
 			console.log("News = ", data)
 
@@ -725,9 +737,9 @@ function getNews() {
 							<img src="${item['image']}" alt="">
 						</div>
 						<div class="item-news__body item-news__body--big">
-							<p class="item-news__title popup-news-link" data-id="${item['id']}">${item['name']}</p>
+							<p class="item-news__title popup-news-link" data-id="${item['id']}">${item['title']}</p>
 
-							<p class="item-news__text item-news__text--big">${item['text']}</p>
+							<p class="item-news__text item-news__text--big">${item['text_full']}</p>
 							<p class="item-news__big-link popup-news-link" data-id="${item['id']}">*читать еще*</p>
 						</div>
 					</div>`
@@ -739,9 +751,9 @@ function getNews() {
 							<img src="${item['image']}" alt="">
 						</div>
 						<div class="item-news__body">
-							<p class="item-news__title popup-news-link" data-id="${item['id']}">${item['name']}</p>
+							<p class="item-news__title popup-news-link" data-id="${item['id']}">${item['title']}</p>
 
-							<p class="item-news__text">${item['text']}</p>
+							<p class="item-news__text">${item['text_full']}</p>
 						</div>
 					</div>`
 					);
@@ -784,13 +796,13 @@ function openNewsModal(newsItem) {
 		`
 		<img class="img-close-popup close-popup" src="images/system_img/close-popup.png" alt="">
 				<div class="popup__block">
-					<h2 id="news-popup-title" class="popup__title">${newsItem.name}</h2>
+					<h2 id="news-popup-title" class="popup__title">${newsItem.title}</h2>
 					<div class="popup__body">
 						<div class="popup__img">
 							<img id="news-popup-img" src="${newsItem.image}" alt="">
 						</div>
 						<div class="popup__info">
-							<p id="news-popup-description">${newsItem.text}</p>
+							<p id="news-popup-description">${newsItem.text_full}</p>
 						</div>
 					</div>
 					<a href="#" class="popup__btn btn close-popup">Закрыть</a>

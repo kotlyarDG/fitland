@@ -610,3 +610,13 @@ $xs: 768px;
 .item-sel::before {
 	background: #a86e59 !important;
 }
+
+.select-choice_rz .selectbox .trigger .arrow,
+.select-choice_rz .selectbox .trigger .arrow:before,
+.select-choice_rz .selectbox .trigger .arrow:after {
+	background-color: #a86e59 !important;
+}
+
+.in-die label.active {
+	color: #a86e59 !important;
+}
