@@ -1,6 +1,13 @@
 // Проверка, загрузилась ли страница
 $(document).ready(function () {
 
+	getPromotions();
+	getTrainers();
+	getTickets();
+	getClass();
+	getPersonals();
+	getAdditionals();
+
 	$('.scroll-link').click(function (e) {
 		let blockId = $(this).attr('href');
 		$('html, body').animate({
@@ -38,39 +45,10 @@ $(document).ready(function () {
 		});
 	});
 
-	$('.trainer-popup-link').click(function (e) {
-		$('#trainer-popup').addClass('open');
-		e.preventDefault();
-	});
 
-	$('#trainer-popup').click(function (e) {
-		if (!e.target.closest('.popup__content')) {
-			$('#trainer-popup').removeClass('open');
-		}
-	});
 
-	$('#trainer-popup').find('.close-popup').click(function (e) {
-		console.log('trainer close')
-		$('#trainer-popup').removeClass('open');
-		e.preventDefault();
-	})
 
-	$('.sales-popup-link').click(function (e) {
-		$('#sales-popup').addClass('open');
-		e.preventDefault();
-	});
 
-	$('#sales-popup').click(function (e) {
-		if (!e.target.closest('.popup__content')) {
-			$('#sales-popup').removeClass('open');
-		}
-	});
-
-	$('#sales-popup').find('.close-popup').click(function (e) {
-		console.log('sales close')
-		$('#sales-popup').removeClass('open');
-		e.preventDefault();
-	})
 
 	$('#link-first').click(function () {
 		$('#first-popup').addClass('open');
@@ -169,19 +147,6 @@ $(document).ready(function () {
 
 	});
 
-	$('.services-list__item-btn').click(function () {
-		$('.services__list').removeClass('_active');
-
-		$('.services__list').fadeOut(300, function () {
-
-			setTimeout(function () {
-				$('.services__form').fadeIn(300);
-				$('.services__form').addClass('_active');
-
-			}, 350);
-		})
-	});
-
 	$('.services__btn-back').click(function () {
 		if ($(this).next().hasClass('_active')) {
 			titleItem = $('.title-service_active');
@@ -212,6 +177,56 @@ $(document).ready(function () {
 		dots: true
 	})
 
+
+	setTimeout(function () {
+		$("#bgndVideo").YTPlayer();
+
+	}, 1500);
+
+	getNews();
+});
+
+function getTrainers() {
+	let trainers = [
+		{
+			"id": 1,
+			"name": "Тренер 1",
+			"description": "Описание тренера 1",
+			"photo": "Фото тренера 1",
+			"order": 1
+		},
+		{
+			"id": 2,
+			"name": "Тренер 2",
+			"description": "Описание тренера 2",
+			"photo": "Фото тренера 2",
+			"order": 1
+		}
+	]
+
+	for (let trainer of trainers) {
+		$('.trainers-big').append(
+			`
+			<div class="item-big">
+						<div class="item-big__img"
+							style="background: #E7DCC9 ${trainer['photo']} center / cover no-repeat;">
+						</div>
+						<div class="item-big__body">
+							<p class="item-big__name">${trainer['name']}</p>
+							<p class="item-big__text">${trainer['description']}</p>
+							<a data-id="${trainer['id']}" href="trainer-popup" class="item-big__btn trainer-popup-link">ЗАПИСАТЬСЯ</a>
+						</div>
+					</div>
+			`
+		);
+		$('.trainers-small').append(
+			`
+			<div class="item-small"
+						style="background: ${trainer['photo']} center / cover no-repeat;"></div>
+			`
+		);
+	}
+
 	$('.trainers-big').slick({
 		arrows: false,
 		dots: false,
@@ -241,16 +256,457 @@ $(document).ready(function () {
 		]
 	})
 
+	$('.trainer-popup-link').click(function (e) {
+		openTrainerModal(trainers.find(x => x.id == $(this).data('id')));
+		e.preventDefault();
+	});
 
-	let options = { videoId: 'HQfF5XRVXjU' };
 
-	setTimeout(function () {
-		$("#bgndVideo").YTPlayer();
+}
 
-	}, 1500);
+function openTrainerModal(trainer) {
 
-	getNews();
-});
+	console.log('open trainer modal');
+	console.log(trainer);
+
+	$('#trainer-popup').find('.popup__block').html(
+		`
+		<div class="popup-trainer__close close-popup">
+		<img src="images/system_img/close-popup-brown.png" alt="">
+	</div>
+	<h2 id="traier-popup-title" class="popup__trainer-title">${trainer['name']}</h2>
+	<img src=${trainer['photo']} alt="" class="popup__img-traier">
+	<p class="popup__text-trainer">оставьте свои данные</p>
+	<input type="text" id="train-name" class="try-train__input" placeholder="ФИО" required>
+	<input type="tel" id="train-tel" class="try-train__input" placeholder="Номер телефона" required>
+	<button type="submit" class="try-train__btn">ЗАПИСАТЬСЯ</button>
+		`
+	)
+
+	$('#trainer-popup').addClass('open');
+
+	$('#trainer-popup').click(function (e) {
+		if (!e.target.closest('.popup__content')) {
+			$('#trainer-popup').removeClass('open');
+		}
+	});
+
+	$('#trainer-popup').find('.close-popup').click(function (e) {
+		console.log('trainer close')
+		$('#trainer-popup').removeClass('open');
+		e.preventDefault();
+	});
+
+}
+
+function getTickets() {
+	let tickets = [
+		{
+			"id": 1,
+			"title": "ticket 1",
+			"description": "des 1",
+			"price": 100
+		},
+		{
+			"id": 2,
+			"title": "ticket 2",
+			"description": "des 2",
+			"price": 200
+		}
+	];
+
+	for (let item of tickets) {
+		$('.services__list--tickets').find('.services-list__items').append(
+			`
+			<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">${item['title']}</p>
+									<p class="services-list__item-subtitle">${item['description']}</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">${item['price']} р.</p>
+									<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+			`
+		);
+
+	};
+
+	$('.services__list--tickets').find('.services-list__item-btn').click(function () {
+		openFormTicket(tickets.find(x => x.id == $(this).data('id')));
+	})
+
+}
+
+function openFormTicket(item) {
+
+	$('.services__list').removeClass('_active');
+	$('.services__form--tickets').html(
+		`
+			<form>
+							<div class="services-form__input-wrapper">
+								<label for="input-fio-1" class="services-form__label">ФИО</label>
+								<input type="text" id="input-fio-1" class="services-form__input" placeholder="ФИО">
+							</div>
+							<div class="services-form__input-wrapper services-form__input-wrapper--tel">
+								<label for="input-phone-1" class="services-form__label">Номер телефона</label>
+								<input type="tel" id="input-phone-1" class="services-form__input" placeholder="Номер телефона">
+							</div>
+							<button class="services-form__btn" type="submit">отправить заявку</button>
+						</form>
+			`
+	);
+
+	$()
+	$('.services__list').fadeOut(300, function () {
+
+		setTimeout(function () {
+			$('.services__form').fadeIn(300);
+			$('.services__form').addClass('_active');
+
+		}, 350);
+	})
+	$('.services__form--tickets').find('.services-form__btn').click(function (e) {
+		console.log(item);
+		e.preventDefault();
+	})
+}
+
+function getClass() {
+	let classes = [
+		{
+			"id": 1,
+			"title": "ticket 1",
+			"description": "des 1",
+			"price": 100
+		},
+		{
+			"id": 2,
+			"title": "ticket 2",
+			"description": "des 2",
+			"price": 200
+		}
+	];
+
+	for (let item of classes) {
+		$('.services__list--class').find('.services-list__items').append(
+			`
+			<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">${item['title']}</p>
+									<p class="services-list__item-subtitle">${item['description']}</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">${item['price']} р.</p>
+									<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+			`
+		);
+
+	};
+
+	$('.services__list--class').find('.services-list__item-btn').click(function () {
+		openFormClass(classes.find(x => x.id == $(this).data('id')));
+	})
+
+}
+
+function openFormClass(item) {
+
+	$('.services__list').removeClass('_active');
+	$('.services__form--class').html(
+		`
+		<form>
+		<div class="services-form__input-wrapper">
+			<label for="input-fio-2" class="services-form__label">ФИО</label>
+			<input type="text" id="input-fio-2" class="services-form__input" placeholder="ФИО">
+		</div>
+		<div class="services-form__input-wrapper">
+			<label for="input-class-2" class="services-form__label">Название класса</label>
+			<input type="text" id="input-class-2" class="services-form__input"
+				placeholder="Название класса">
+		</div>
+		<div class="services-form__input-wrapper">
+			<label for="input-date-2" class="services-form__label">Дата</label>
+			<input type="date" id="input-date-2" class="services-form__input">
+		</div>
+		<div class="services-form__input-wrapper">
+			<label for="input-time-2" class="services-form__label">Время</label>
+			<input type="time" id="input-time-2" class="services-form__input">
+		</div>
+		<div class="services-form__input-wrapper services-form__input-wrapper--tel">
+			<label for="input-phone-2" class="services-form__label">Номер телефона</label>
+			<input type="tel" id="input-phone-2" class="services-form__input" placeholder="Номер телефона">
+		</div>
+		<button class="services-form__btn" type="submit">отправить заявку</button>
+	</form>
+			`
+	);
+
+	$()
+	$('.services__list').fadeOut(300, function () {
+
+		setTimeout(function () {
+			$('.services__form').fadeIn(300);
+			$('.services__form').addClass('_active');
+
+		}, 350);
+	})
+	$('.services__form--class').find('.services-form__btn').click(function (e) {
+		console.log(item);
+		e.preventDefault();
+	})
+}
+
+
+function getPersonals() {
+	let personals = [
+		{
+			"id": 1,
+			"title": "ticket 1",
+			"description": "des 1",
+			"price": 100
+		},
+		{
+			"id": 2,
+			"title": "ticket 2",
+			"description": "des 2",
+			"price": 200
+		}
+	];
+
+	for (let item of personals) {
+		$('.services__list--personal').find('.services-list__items').append(
+			`
+			<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">${item['title']}</p>
+									<p class="services-list__item-subtitle">${item['description']}</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">${item['price']} р.</p>
+									<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+			`
+		);
+
+	};
+
+	$('.services__list--personal').find('.services-list__item-btn').click(function () {
+		openFormPersonal(personals.find(x => x.id == $(this).data('id')));
+	})
+
+}
+
+function openFormPersonal(item) {
+
+	$('.services__list').removeClass('_active');
+	$('.services__form--personal').html(
+		`
+		<form>
+		<div class="services-form__input-wrapper">
+			<label for="input-fio-3" class="services-form__label">ФИО</label>
+			<input type="text" id="input-fio-3" class="services-form__input" placeholder="ФИО">
+		</div>
+		<div class="services-form__input-wrapper">
+			<label for="input-name-3" class="services-form__label">Имя тренера</label>
+			<input type="text" id="input-name-3" class="services-form__input" placeholder="Имя тренера">
+		</div>
+		<div class="services-form__input-wrapper services-form__input-wrapper--tel">
+			<label for="input-phone-3" class="services-form__label">Номер телефона</label>
+			<input type="tel" id="input-phone-3" class="services-form__input" placeholder="Номер телефона">
+		</div>
+		<button class="services-form__btn" type="submit">отправить заявку</button>
+	</form>
+			`
+	);
+
+	$()
+	$('.services__list').fadeOut(300, function () {
+
+		setTimeout(function () {
+			$('.services__form').fadeIn(300);
+			$('.services__form').addClass('_active');
+
+		}, 350);
+	})
+	$('.services__form--personal').find('.services-form__btn').click(function (e) {
+		console.log(item);
+		e.preventDefault();
+	})
+}
+
+
+function getAdditionals() {
+	let additionals = [
+		{
+			"id": 1,
+			"title": "ticket 1",
+			"description": "des 1",
+			"price": 100
+		},
+		{
+			"id": 2,
+			"title": "ticket 2",
+			"description": "des 2",
+			"price": 200
+		}
+	];
+
+	for (let item of additionals) {
+		$('.services__list--additional').find('.services-list__items').append(
+			`
+			<div class="services-list__item">
+								<div class="services-list__item-left">
+									<p class="services-list__item-title">${item['title']}</p>
+									<p class="services-list__item-subtitle">${item['description']}</p>
+								</div>
+								<div class="services-list__item-right">
+									<p class="services-list__item-price">${item['price']} р.</p>
+									<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+								</div>
+							</div>
+			`
+		);
+
+	};
+
+	$('.services__list--additional').find('.services-list__item-btn').click(function () {
+		openFormAdditional(additionals.find(x => x.id == $(this).data('id')));
+	})
+
+}
+
+function openFormAdditional(item) {
+
+	$('.services__list').removeClass('_active');
+	$('.services__form--additional').html(
+		`
+		<form>
+		<div class="services-form__input-wrapper">
+			<label for="input-fio-4" class="services-form__label">ФИО</label>
+			<input type="text" id="input-fio-4" class="services-form__input" placeholder="ФИО">
+		</div>
+		<div class="services-form__input-wrapper services-form__input-wrapper--tel">
+			<label for="input-phone-4" class="services-form__label">Номер телефона</label>
+			<input type="tel" id="input-phone-4" class="services-form__input" placeholder="Номер телефона">
+		</div>
+		<button class="services-form__btn" type="submit">отправить заявку</button>
+	</form>
+			`
+	);
+
+	$()
+	$('.services__list').fadeOut(300, function () {
+
+		setTimeout(function () {
+			$('.services__form').fadeIn(300);
+			$('.services__form').addClass('_active');
+
+		}, 350);
+	})
+	$('.services__form--additional').find('.services-form__btn').click(function (e) {
+		console.log(item);
+		e.preventDefault();
+	})
+}
+
+
+function getPromotions() {
+	let promotions = [
+		{
+			"id": 1,
+			"title": "Название 1",
+			"description": "Описание 1",
+			"order_num": 1,
+			"date_start": "2021-05-05T21:00:00.000Z",
+			"date_end": "2021-05-27T21:00:00.000Z",
+			"image_mini": "Картинка мини",
+			"image_full": "Картинка полная"
+		},
+		{
+			"id": 2,
+			"title": "Название 2",
+			"description": "Описание 2",
+			"order_num": 1,
+			"date_start": "2021-05-05T21:00:00.000Z",
+			"date_end": "2021-05-27T21:00:00.000Z",
+			"image_mini": "Картинка мини",
+			"image_full": "Картинка полная"
+		}
+	];
+
+	for (let promotion of promotions) {
+		$('.promotions__items').append(
+			`
+			<a data-id="${promotion['id']}" class="item-promotion sales-popup-link">
+						<img src="${promotion['image_full']}" alt=""> 
+						<p>${promotion['image_full']}</p>
+					</a>
+			`
+		)
+	}
+
+	$('.sales-popup-link').click(function (e) {
+		let item = promotions.find(x => x.id == $(this).data('id'));
+		openPromotionModal(item);
+		e.preventDefault();
+	})
+}
+
+function formatDate(date) {
+	console.log('format date');
+	let days = date.getDate();
+	if (+days < 10) days = '0' + days.toString();
+	let months = date.getMonth();
+	if (+months < 10) months = '0' + months.toString();
+
+
+	return days + '.' + months + '.' + date.getFullYear();
+}
+
+function openPromotionModal(promotion) {
+	console.log('open promo');
+	console.log(promotion);
+
+	let dateStart = formatDate(new Date(promotion['date_start']));
+	let dateEnd = formatDate(new Date(promotion['date_end']));
+
+
+	$('#sales-popup').find('.popup__block').html(
+		`
+		<h2 id="sales-popup-title" class="popup__title">${promotion['title']}</h2>
+		<div class="popup__body">
+						<div class="popup__img">
+							<img id="sales-popup-img" src="${promotion['image_mini']}" alt="">
+							<div>
+								<p id="sales-popup-limits" class="popup__date-info">${dateStart} - ${dateEnd}</p>
+							</div>
+						</div>
+						<div class="popup__info">
+							<p id="sales-popup-description">${promotion['description']}</p>
+						</div>
+					</div>
+					<a href="#" class="popup__btn btn close-popup">Классная акция!</a>
+		`
+	);
+	$('#sales-popup').addClass('open');
+
+	$('#sales-popup').click(function (e) {
+		if (!e.target.closest('.popup__content')) {
+			$('#sales-popup').removeClass('open');
+		}
+	});
+
+	$('#sales-popup').find('.close-popup').click(function (e) {
+		console.log('sales close')
+		$('#sales-popup').removeClass('open');
+		e.preventDefault();
+	})
+}
 
 function getNews() {
 	$.ajax({

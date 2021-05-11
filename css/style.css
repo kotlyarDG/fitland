@@ -1185,7 +1185,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .services__form {
-  padding: 0 20px 50px 40px;
+  padding: 0 20px 100px 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1195,6 +1195,8 @@ h1, h2, h3, h4, h5, h6 {
           flex-direction: column;
   height: 100%;
   min-height: 441px;
+  max-height: 100%;
+  overflow-y: auto;
 }
 
 @media (max-width: 991px) {

@@ -255,12 +255,14 @@
 	}
 	&__form {
 		// flex: 0 1 75%;
-		padding: 0 20px 50px 40px;
+		padding: 0 20px 100px 40px;
 		// background: #e7ddca;
 		display: flex;
 		flex-direction: column;
 		height: 100%;
 		min-height: 441px;
+		max-height: 100%;
+		overflow-y: auto;
 
 		@media (max-width: 991px) {
 			padding: 20px 10px 40px 10px;
