@@ -19,12 +19,17 @@ $(document).ready(function () {
 		});
 	});
 
+	$('.popup-first__img').click(function (e) {
+		e.preventDefault();
+	})
+
 	$('.scroll-link').click(function (e) {
 		let blockId = $(this).attr('href');
 		$('html, body').animate({
 			scrollTop: $(blockId).offset().top - 100
 		}, 'slow');
 		$('.header__burger,.burger__menu,.header').removeClass('_active');
+		$('.popup').removeClass('open');
 		$('body').removeClass('_lock');
 
 		e.preventDefault();
