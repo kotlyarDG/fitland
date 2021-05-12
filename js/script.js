@@ -194,7 +194,7 @@ $(document).ready(function () {
 			'phone': $('#try-tel').val()
 		}
 		console.log(data);
-		sendOrder(data, 'abonement');
+		sendOrder(data, 'test_training');
 
 		e.preventDefault();
 	})
@@ -213,6 +213,7 @@ function getTrainers() {
 		type: "GET",
 		url: `${serverUrl}/trainers`,
 		success: function (data) {
+			console.log('trainers');
 			console.log(data);
 			let trainers = data;
 
@@ -221,7 +222,7 @@ function getTrainers() {
 					`
 					<div class="item-big">
 								<div class="item-big__img"
-									style="background: #E7DCC9 ${trainer['photo']} center / cover no-repeat;">
+									style="background: #E7DCC9 url('${trainer['photo']}') center / cover no-repeat;">
 								</div>
 								<div class="item-big__body">
 									<p class="item-big__name">${trainer['fullname']}</p>
@@ -234,7 +235,7 @@ function getTrainers() {
 				$('.trainers-small').append(
 					`
 					<div class="item-small"
-								style="background: ${trainer['photo']} center / cover no-repeat;"></div>
+								style="background: #062436 url('${trainer['photo']}') center / cover no-repeat;"></div>
 					`
 				);
 			}
@@ -315,7 +316,7 @@ function openTrainerModal(trainer) {
 			'trainer_name': trainer['fullname']
 		}
 		console.log(data);
-		sendOrder(data, 'personal');
+		sendOrder(data, 'trainer');
 
 		e.preventDefault();
 	})
@@ -412,7 +413,7 @@ function openFormTicket(item) {
 			'phone': $('#input-phone-1').val()
 		}
 		console.log(data);
-		sendOrder(data, 'abonement');
+		sendOrder(data, 'aboniment', item['title']);
 
 		e.preventDefault();
 	})
@@ -464,6 +465,7 @@ function openFormClass(item) {
 	$('.services__form--class').html(
 		`
 		<form>
+		<p class="services-list__item-subtitle"  style="margin: 0 0 25px 0;">${item['description']}</p>
 		<div class="services-form__input-wrapper">
 			<label for="input-fio-2" class="services-form__label">ФИО</label>
 			<input type="text" id="input-fio-2" class="services-form__input" placeholder="ФИО" required>
@@ -473,6 +475,7 @@ function openFormClass(item) {
 			<input type="text" id="input-class-2" class="services-form__input"
 				value="${item['title']}" readonly>
 		</div>
+		
 		<div class="services-form__input-wrapper">
 			<label for="input-date-2" class="services-form__label">Дата</label>
 			<input type="date" id="input-date-2" class="services-form__input" required>
@@ -481,6 +484,8 @@ function openFormClass(item) {
 			<label for="input-time-2" class="services-form__label">Время</label>
 			<input type="time" id="input-time-2" class="services-form__input" required>
 		</div>
+		<p class="services-list__item-subtitle" style="margin: 0 0 25px 0;">*выбирайте время согласно основному расписанию</p>
+
 		<div class="services-form__input-wrapper services-form__input-wrapper--tel">
 			<label for="input-phone-2" class="services-form__label">Номер телефона</label>
 			<input type="tel" id="input-phone-2" class="services-form__input" placeholder="Номер телефона">
@@ -509,7 +514,7 @@ function openFormClass(item) {
 			'time': $('#input-time-2').val()
 		}
 		console.log(data);
-		sendOrder(data, 'comm_class');
+		sendOrder(data, 'comm_class', item['title']);
 
 		e.preventDefault();
 	})
@@ -600,7 +605,7 @@ function openFormPersonal(item) {
 			'comment': $('#input-comment-3').val()
 		}
 		console.log(data);
-		sendOrder(data, 'personal');
+		sendOrder(data, 'personal', item['title']);
 
 		e.preventDefault();
 	})
@@ -683,7 +688,7 @@ function openFormAdditional(item) {
 			'phone': $('#input-phone-4').val()
 		}
 		console.log(data);
-		sendOrder(data, 'abonement');
+		sendOrder(data, 'add_order', item['title']);
 
 		e.preventDefault();
 	})
@@ -889,14 +894,15 @@ function openNewsModal(newsItem) {
 	})
 }
 
-function sendOrder(item, type) {
+function sendOrder(item, type, title) {
 	let dataToSend;
 	switch (type) {
-		case 'abonement':
+		case 'aboniment':
 			dataToSend = {
 				'type': type,
 				'phone': item['phone'],
-				'client_name': item['client_name']
+				'client_name': item['client_name'],
+				'title': title
 			}
 			break;
 
@@ -907,16 +913,44 @@ function sendOrder(item, type) {
 				'client_name': item['client_name'],
 				'class_name': item['class_name'],
 				'order_date': item['date'],
-				'order_time': item['time']
+				'order_time': item['time'],
+				'title': title
 			}
 			break;
 
-		case 'personal':
+		case 'personal_training':
+			dataToSend = {
+				'type': type,
+				'phone': item['phone'],
+				'client_name': item['client_name'],
+				'trainer_name': item['trainer_name'],
+				'title': title
+			}
+			break;
+
+		case 'add_sevice':
+			dataToSend = {
+				'type': type,
+				'phone': item['phone'],
+				'client_name': item['client_name'],
+				'title': title
+			}
+			break;
+
+		case 'trainer':
 			dataToSend = {
 				'type': type,
 				'phone': item['phone'],
 				'client_name': item['client_name'],
 				'trainer_name': item['trainer_name']
+			}
+			break;
+
+		case 'test_training':
+			dataToSend = {
+				'type': type,
+				'phone': item['phone'],
+				'client_name': item['client_name']
 			}
 			break;
 
