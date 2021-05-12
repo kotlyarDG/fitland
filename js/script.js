@@ -466,20 +466,20 @@ function openFormClass(item) {
 		<form>
 		<div class="services-form__input-wrapper">
 			<label for="input-fio-2" class="services-form__label">ФИО</label>
-			<input type="text" id="input-fio-2" class="services-form__input" placeholder="ФИО">
+			<input type="text" id="input-fio-2" class="services-form__input" placeholder="ФИО" required>
 		</div>
 		<div class="services-form__input-wrapper">
 			<label for="input-class-2" class="services-form__label">Название класса</label>
 			<input type="text" id="input-class-2" class="services-form__input"
-				placeholder="Название класса">
+				value="${item['title']}" readonly>
 		</div>
 		<div class="services-form__input-wrapper">
 			<label for="input-date-2" class="services-form__label">Дата</label>
-			<input type="date" id="input-date-2" class="services-form__input">
+			<input type="date" id="input-date-2" class="services-form__input" required>
 		</div>
 		<div class="services-form__input-wrapper">
 			<label for="input-time-2" class="services-form__label">Время</label>
-			<input type="time" id="input-time-2" class="services-form__input">
+			<input type="time" id="input-time-2" class="services-form__input" required>
 		</div>
 		<div class="services-form__input-wrapper services-form__input-wrapper--tel">
 			<label for="input-phone-2" class="services-form__label">Номер телефона</label>
@@ -563,15 +563,19 @@ function openFormPersonal(item) {
 		<form>
 		<div class="services-form__input-wrapper">
 			<label for="input-fio-3" class="services-form__label">ФИО</label>
-			<input type="text" id="input-fio-3" class="services-form__input" placeholder="ФИО">
+			<input type="text" id="input-fio-3" class="services-form__input" placeholder="ФИО" required>
 		</div>
 		<div class="services-form__input-wrapper">
 			<label for="input-name-3" class="services-form__label">Имя тренера</label>
-			<input type="text" id="input-name-3" class="services-form__input" placeholder="Имя тренера">
+			<input type="text" id="input-name-3" class="services-form__input" value="${item['title']}" readonly>
 		</div>
 		<div class="services-form__input-wrapper services-form__input-wrapper--tel">
 			<label for="input-phone-3" class="services-form__label">Номер телефона</label>
-			<input type="tel" id="input-phone-3" class="services-form__input" placeholder="Номер телефона">
+			<input type="tel" id="input-phone-3" class="services-form__input" placeholder="Номер телефона" required>
+		</div>
+		<div class="services-form__input-wrapper">
+			<label for="input-comment-3" class="services-form__label">Комментарий</label>
+			<input type="text" id="input-comment-3" class="services-form__input" placeholder="Комментарий">
 		</div>
 		<button class="services-form__btn" type="submit">отправить заявку</button>
 	</form>
@@ -592,7 +596,8 @@ function openFormPersonal(item) {
 		let data = {
 			'client_name': $('#input-fio-3').val(),
 			'phone': $('#input-phone-3').val(),
-			'trainer_name': $('#input-name-3').val()
+			'trainer_name': $('#input-name-3').val(),
+			'comment': $('#input-comment-3').val()
 		}
 		console.log(data);
 		sendOrder(data, 'personal');
@@ -651,11 +656,11 @@ function openFormAdditional(item) {
 		<form>
 		<div class="services-form__input-wrapper">
 			<label for="input-fio-4" class="services-form__label">ФИО</label>
-			<input type="text" id="input-fio-4" class="services-form__input" placeholder="ФИО">
+			<input type="text" id="input-fio-4" class="services-form__input" placeholder="ФИО" required>
 		</div>
 		<div class="services-form__input-wrapper services-form__input-wrapper--tel">
 			<label for="input-phone-4" class="services-form__label">Номер телефона</label>
-			<input type="tel" id="input-phone-4" class="services-form__input" placeholder="Номер телефона">
+			<input type="tel" id="input-phone-4" class="services-form__input" placeholder="Номер телефона" required>
 		</div>
 		<button class="services-form__btn" type="submit">отправить заявку</button>
 	</form>

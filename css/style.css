@@ -3126,12 +3126,16 @@ input[type="checkbox"]:checked + label:after {
 }
 
 #order-popup .popup__wrapper {
-  width: 100%;
-  height: 100%;
+  width: 100vw !important;
+  height: 100vh !important;
   border-radius: 0;
   overflow-y: auto;
   max-height: 100vh;
   background: url("../../images/system_img/bg-services.png") center/cover no-repeat;
+}
+
+#order-popup .order-img {
+  max-width: 80%;
 }
 
 #order-popup .order-title {
