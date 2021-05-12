@@ -137,17 +137,7 @@
 						</div>
 					</div>
 					<div class="services__form services__form--tickets">
-						<form>
-							<div class="services-form__input-wrapper">
-								<label for="input-fio-1" class="services-form__label">ФИО</label>
-								<input type="text" id="input-fio-1" class="services-form__input" placeholder="ФИО">
-							</div>
-							<div class="services-form__input-wrapper services-form__input-wrapper--tel">
-								<label for="input-phone-1" class="services-form__label">Номер телефона</label>
-								<input type="tel" id="input-phone-1" class="services-form__input" placeholder="Номер телефона">
-							</div>
-							<button class="services-form__btn" type="submit">отправить заявку</button>
-						</form>
+
 					</div>
 				</div>
 
@@ -306,6 +296,7 @@
 			</section>
 		</div>
 
+
 		<footer class="footer">
 			<img src="images/system_img/footer/bg-top.png" alt="" class="bg-top">
 			<img src="images/system_img/footer/bg-footer.png" alt="" class="bg-line-foot">
@@ -313,7 +304,8 @@
 				<div class="footer__content">
 					<!-- <div class="footer__flex"> -->
 					<div class="footer__map">
-						<img src="images/system_img/footer/map.png" alt="">
+						<!-- <img src="images/system_img/footer/map.png" alt=""> -->
+						<div id="map" style="height: 250px; width: 100%;"></div>
 						<p class="footer__map-text">2. м. Белорусская, м. Динамо<br>
 							3-я улица Ямского поля, д. 2, корп. 4</p>
 					</div>
@@ -393,7 +385,7 @@
 						и
 						постоянным эмоциональным качелям. Если пустить все на самотек, то упадок сил и эмоциональные качели
 						становятся постоянными спутниками.</p>
-					<a class="popup-first__tagline">НАША ЦЕЛЬ ПОБЕДИТЬ СТРЕСС</a>
+					<a class="popup-first__tagline">НАША ЦЕЛЬ ПОДКАЧАТЬ ВАС</a>
 					<div class="popup-first__images">
 						<a href="" class="popup-first__img"><img src="images/content_img/popup-first/01.jpg" alt=""></a>
 						<a href="" class="popup-first__img"><img src="images/content_img/popup-first/02.jpg" alt=""></a>
@@ -410,9 +402,9 @@
 
 	<div id="sales-popup" class="popup">
 		<div class="popup__wrapper">
+
 			<div class="popup__content-block popup__content">
 				<div class="popup__block">
-
 
 				</div>
 			</div>
@@ -431,10 +423,27 @@
 
 	</div>
 
+	<div id="order-popup" class="popup">
+
+		<div class="popup__wrapper">
+			<!-- <img class="popup-first__close close-popup" src="images/system_img/close-popup-brown.png" alt=""> -->
+			<div class="popup__content-block popup__content">
+				<img class="order-img" src="images/system_img/order-popup.png" alt="">
+				<h3 class="order-title">ДОбрый день</h3>
+				<p class="order-text">МЫ ПРИНЯЛИ В РАБОТУ ВАШЕ ОБРАЩЕНИЕ И В БЛИЖАЙШЕЕ ВРЕМЯ МЫ С ВАМИ СВЯЖЕМСЯ</p>
+				<!-- <button class="popup__btn btn close-popup">спасибо</button> -->
+			</div>
+		</div>
+
+	</div>
+
 
 	<!-- Подключение JS файлов -->
 	<!-- Jquery -->
 	<script src="js/jquery-3.5.0.min.js"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=2116033d-b03e-4bb2-afea-a4bd796f2e86&lang=ru_RU"
+		type="text/javascript">
+		</script>
 	<script src="https://reservi.ru/widget-fit1c.v2/js/config.js"
 		data-fit-salon-id="4bf90b4b-9e51-43de-a08f-67b4c59322f0"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

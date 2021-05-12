@@ -9,11 +9,20 @@ $(document).ready(function () {
 	getClass();
 	getPersonals();
 	getAdditionals();
+	getNews();
+
+	ymaps.ready(function () {
+		console.log('map init');
+		var myMap = new ymaps.Map("map", {
+			center: [55.782546568956114, 37.58127150000001],
+			zoom: 17
+		});
+	});
 
 	$('.scroll-link').click(function (e) {
 		let blockId = $(this).attr('href');
 		$('html, body').animate({
-			scrollTop: $(blockId).offset().top
+			scrollTop: $(blockId).offset().top - 100
 		}, 'slow');
 		$('.header__burger,.burger__menu,.header').removeClass('_active');
 		$('body').removeClass('_lock');
@@ -58,7 +67,7 @@ $(document).ready(function () {
 
 	$('.close-popup').click(function () {
 		$('#first-popup').removeClass('open');
-
+		$('#order-popup').removeClass('open');
 	})
 
 	$('#first-popup').click(function (e) {
@@ -173,7 +182,17 @@ $(document).ready(function () {
 
 	})
 
+	$('.try-train__form').submit(function (e) {
 
+		let data = {
+			'client_name': $('#try-name').val(),
+			'phone': $('#try-tel').val()
+		}
+		console.log(data);
+		sendOrder(data, 'abonement');
+
+		e.preventDefault();
+	})
 
 
 	setTimeout(function () {
@@ -181,7 +200,6 @@ $(document).ready(function () {
 
 	}, 1500);
 
-	getNews();
 });
 
 function getTrainers() {
@@ -272,14 +290,30 @@ function openTrainerModal(trainer) {
 		<div class="popup-trainer__close close-popup">
 		<img src="images/system_img/close-popup-brown.png" alt="">
 	</div>
-	<h2 id="traier-popup-title" class="popup__trainer-title">${trainer['name']}</h2>
+	<h2 id="traier-popup-title" class="popup__trainer-title">${trainer['fullname']}</h2>
 	<img src=${trainer['photo']} alt="" class="popup__img-traier">
 	<p class="popup__text-trainer">оставьте свои данные</p>
+	<form>
 	<input type="text" id="train-name" class="try-train__input" placeholder="ФИО" required>
 	<input type="tel" id="train-tel" class="try-train__input" placeholder="Номер телефона" required>
 	<button type="submit" class="try-train__btn">ЗАПИСАТЬСЯ</button>
+	</form>
+	
 		`
 	)
+
+	$('#trainer-popup').find('form').submit(function (e) {
+
+		let data = {
+			'client_name': $('#train-name').val(),
+			'phone': $('#train-tel').val(),
+			'trainer_name': trainer['fullname']
+		}
+		console.log(data);
+		sendOrder(data, 'personal');
+
+		e.preventDefault();
+	})
 
 	$('#trainer-popup').addClass('open');
 
@@ -346,11 +380,11 @@ function openFormTicket(item) {
 			<form>
 							<div class="services-form__input-wrapper">
 								<label for="input-fio-1" class="services-form__label">ФИО</label>
-								<input type="text" id="input-fio-1" class="services-form__input" placeholder="ФИО">
+								<input type="text" id="input-fio-1" class="services-form__input" placeholder="ФИО" required>
 							</div>
 							<div class="services-form__input-wrapper services-form__input-wrapper--tel">
 								<label for="input-phone-1" class="services-form__label">Номер телефона</label>
-								<input type="tel" id="input-phone-1" class="services-form__input" placeholder="Номер телефона">
+								<input type="tel" id="input-phone-1" class="services-form__input" placeholder="Номер телефона" required>
 							</div>
 							<button class="services-form__btn" type="submit">отправить заявку</button>
 						</form>
@@ -366,27 +400,20 @@ function openFormTicket(item) {
 
 		}, 350);
 	})
-	$('.services__form--tickets').find('.services-form__btn').click(function (e) {
+	$('.services__form--tickets').find('form').submit(function (e) {
 		console.log(item);
+		let data = {
+			'client_name': $('#input-fio-1').val(),
+			'phone': $('#input-phone-1').val()
+		}
+		console.log(data);
+		sendOrder(data, 'abonement');
+
 		e.preventDefault();
 	})
 }
 
 function getClass() {
-	let classes = [
-		{
-			"id": 1,
-			"title": "ticket 1",
-			"description": "des 1",
-			"price": 100
-		},
-		{
-			"id": 2,
-			"title": "ticket 2",
-			"description": "des 2",
-			"price": 200
-		}
-	];
 
 	$.ajax({
 		type: "GET",
@@ -467,8 +494,18 @@ function openFormClass(item) {
 
 		}, 350);
 	})
-	$('.services__form--class').find('.services-form__btn').click(function (e) {
+	$('.services__form--class').find('form').submit(function (e) {
 		console.log(item);
+		let data = {
+			'client_name': $('#input-fio-2').val(),
+			'phone': $('#input-phone-2').val(),
+			'class_name': $('#input-class-2').val(),
+			'date': $('#input-date-2').val(),
+			'time': $('#input-time-2').val()
+		}
+		console.log(data);
+		sendOrder(data, 'comm_class');
+
 		e.preventDefault();
 	})
 }
@@ -545,8 +582,16 @@ function openFormPersonal(item) {
 
 		}, 350);
 	})
-	$('.services__form--personal').find('.services-form__btn').click(function (e) {
+	$('.services__form--personal').find('form').submit(function (e) {
 		console.log(item);
+		let data = {
+			'client_name': $('#input-fio-3').val(),
+			'phone': $('#input-phone-3').val(),
+			'trainer_name': $('#input-name-3').val()
+		}
+		console.log(data);
+		sendOrder(data, 'personal');
+
 		e.preventDefault();
 	})
 }
@@ -621,8 +666,15 @@ function openFormAdditional(item) {
 
 		}, 350);
 	})
-	$('.services__form--additional').find('.services-form__btn').click(function (e) {
+	$('.services__form--additional').find('form').submit(function (e) {
 		console.log(item);
+		let data = {
+			'client_name': $('#input-fio-4').val(),
+			'phone': $('#input-phone-4').val()
+		}
+		console.log(data);
+		sendOrder(data, 'abonement');
+
 		e.preventDefault();
 	})
 }
@@ -825,4 +877,63 @@ function openNewsModal(newsItem) {
 		$('#news-popup').removeClass('open');
 		e.preventDefault();
 	})
+}
+
+function sendOrder(item, type) {
+	let dataToSend;
+	switch (type) {
+		case 'abonement':
+			dataToSend = {
+				'type': type,
+				'phone': item['phone'],
+				'client_name': item['client_name']
+			}
+			break;
+
+		case 'comm_class':
+			dataToSend = {
+				'type': type,
+				'phone': item['phone'],
+				'client_name': item['client_name'],
+				'class_name': item['class_name'],
+				'order_date': item['date'],
+				'order_time': item['time']
+			}
+			break;
+
+		case 'personal':
+			dataToSend = {
+				'type': type,
+				'phone': item['phone'],
+				'client_name': item['client_name'],
+				'trainer_name': item['trainer_name']
+			}
+			break;
+
+		default:
+			console.log('err type');
+			break;
+	}
+
+	if (dataToSend) {
+		$.ajax({
+			type: "POST",
+			url: `${serverUrl}/order`,
+			data: dataToSend,
+			success: function (msg) {
+				console.log(msg);
+				$('#order-popup').addClass('open');
+
+				setTimeout(function () {
+					$(location).attr('href', '');
+				}, 2000);
+			},
+			error: function (errMsg) {
+				console.log("Error: ", errMsg)
+			}
+		});
+	}
+
+
+
 }
