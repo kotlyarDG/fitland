@@ -315,7 +315,7 @@ function openTrainerModal(trainer) {
 	)
 
 	$('#trainer-popup').find('form').submit(function (e) {
-
+		console.log('send trainer')
 		let data = {
 			'client_name': $('#train-name').val(),
 			'phone': $('#train-tel').val(),
@@ -970,7 +970,8 @@ function sendOrder(item, type, title) {
 				'type': type,
 				'phone': item['phone'],
 				'client_name': item['client_name'],
-				'trainer_name': item['trainer_name']
+				'trainer_name': item['trainer_name'],
+				'title': item['trainer_name']
 			}
 			break;
 
@@ -978,7 +979,8 @@ function sendOrder(item, type, title) {
 			dataToSend = {
 				'type': type,
 				'phone': item['phone'],
-				'client_name': item['client_name']
+				'client_name': item['client_name'],
+				'title': 'Тестовая тренировка'
 			}
 			break;
 
