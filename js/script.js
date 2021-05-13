@@ -496,6 +496,11 @@ function openFormClass(item) {
 			<label for="input-phone-2" class="services-form__label">Номер телефона</label>
 			<input type="tel" id="input-phone-2" class="services-form__input" placeholder="Номер телефона">
 		</div>
+
+		<div class="services-form__input-wrapper">
+			<label for="input-comment-2" class="services-form__label">Комментарий</label>
+			<input type="text" id="input-comment-2" class="services-form__input" placeholder="Комментарий">
+		</div>
 		<button class="services-form__btn" type="submit">отправить заявку</button>
 	</form>
 			`
@@ -517,7 +522,8 @@ function openFormClass(item) {
 			'phone': $('#input-phone-2').val(),
 			'class_name': $('#input-class-2').val(),
 			'date': $('#input-date-2').val(),
-			'time': $('#input-time-2').val()
+			'time': $('#input-time-2').val(),
+			'comment': $('$input-comment-2').val()
 		}
 		console.log(data);
 		sendOrder(data, 'comm_class', item['title']);
@@ -611,7 +617,7 @@ function openFormPersonal(item) {
 			'comment': $('#input-comment-3').val()
 		}
 		console.log(data);
-		sendOrder(data, 'personal', item['title']);
+		sendOrder(data, 'personal_training', item['title']);
 
 		e.preventDefault();
 	})
@@ -673,6 +679,10 @@ function openFormAdditional(item) {
 			<label for="input-phone-4" class="services-form__label">Номер телефона</label>
 			<input type="tel" id="input-phone-4" class="services-form__input" placeholder="Номер телефона" required>
 		</div>
+		<div class="services-form__input-wrapper">
+			<label for="input-comment-4" class="services-form__label">Комментарий</label>
+			<input type="text" id="input-comment-4" class="services-form__input" placeholder="Комментарий">
+		</div>
 		<button class="services-form__btn" type="submit">отправить заявку</button>
 	</form>
 			`
@@ -691,10 +701,11 @@ function openFormAdditional(item) {
 		console.log(item);
 		let data = {
 			'client_name': $('#input-fio-4').val(),
-			'phone': $('#input-phone-4').val()
+			'phone': $('#input-phone-4').val(),
+			'comment': $('#input-comment-4').val()
 		}
 		console.log(data);
-		sendOrder(data, 'add_order', item['title']);
+		sendOrder(data, 'add_service', item['title']);
 
 		e.preventDefault();
 	})
@@ -921,7 +932,8 @@ function sendOrder(item, type, title) {
 				'class_name': item['class_name'],
 				'order_date': item['date'],
 				'order_time': item['time'],
-				'title': title
+				'title': title,
+				'comment': item['comment']
 			}
 			break;
 
@@ -931,16 +943,20 @@ function sendOrder(item, type, title) {
 				'phone': item['phone'],
 				'client_name': item['client_name'],
 				'trainer_name': item['trainer_name'],
-				'title': title
+				'title': title,
+				'comment': item['comment']
+
 			}
 			break;
 
-		case 'add_sevice':
+		case 'add_service':
 			dataToSend = {
 				'type': type,
 				'phone': item['phone'],
 				'client_name': item['client_name'],
-				'title': title
+				'title': title,
+				'comment': item['comment']
+
 			}
 			break;
 
