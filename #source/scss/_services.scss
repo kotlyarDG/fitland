@@ -39,6 +39,7 @@
 	align-items: center;
 	position: relative;
 	z-index: 2;
+	transition: transform 0.3s;
 
 	@media (max-width: 991px) {
 		width: 100%;
@@ -57,7 +58,16 @@
 		z-index: 2;
 		opacity: 1;
 		transition-duration: 0.3s;
-		transition-delay: 0.3s;
+		// transition-delay: 0.3s;
+	}
+
+	&:hover {
+		transform: scale(1.01);
+
+		&:before {
+			opacity: 0.6;
+			transition-delay: 0s;
+		}
 	}
 
 	&__title {
