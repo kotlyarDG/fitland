@@ -516,6 +516,8 @@ function openFormClass(item) {
 		}, 350);
 	})
 	$('.services__form--class').find('form').submit(function (e) {
+
+
 		console.log(item);
 		let data = {
 			'client_name': $('#input-fio-2').val(),
@@ -523,9 +525,10 @@ function openFormClass(item) {
 			'class_name': $('#input-class-2').val(),
 			'date': $('#input-date-2').val(),
 			'time': $('#input-time-2').val(),
-			'comment': $('$input-comment-2').val()
+			'comment': $('#input-comment-2').val()
 		}
 		console.log(data);
+		console.log('comm class send')
 		sendOrder(data, 'comm_class', item['title']);
 
 		e.preventDefault();
@@ -925,6 +928,8 @@ function sendOrder(item, type, title) {
 			break;
 
 		case 'comm_class':
+			console.log('comm class send');
+
 			dataToSend = {
 				'type': type,
 				'phone': item['phone'],
