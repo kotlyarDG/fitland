@@ -1346,6 +1346,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .promotions__items {
   position: relative;
+  margin: 30px 0 0 0;
   /* Активная точка */
   /* Элемент точки */
 }
@@ -1357,6 +1358,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: center !important;
       -ms-flex-pack: center !important;
           justify-content: center !important;
+  cursor: pointer;
 }
 
 .promotions__items .slick-arrow {
@@ -2941,6 +2943,10 @@ input[type="checkbox"]:checked + label:after {
   max-width: 100%;
 }
 
+#news-popup .close-popup {
+  cursor: pointer;
+}
+
 #sales-popup .popup__body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3014,7 +3020,10 @@ input[type="checkbox"]:checked + label:after {
 }
 
 #trainer-popup .popup__img-traier {
-  width: 50%;
+  width: 150px;
+  border-radius: 50%;
+  height: 150px;
+  margin: 0 auto;
 }
 
 #trainer-popup .popup__trainer-title {

@@ -297,7 +297,7 @@ function openTrainerModal(trainer) {
 		<img src="images/system_img/close-popup-brown.png" alt="">
 	</div>
 	<h2 id="traier-popup-title" class="popup__trainer-title">${trainer['fullname']}</h2>
-	<img src=${trainer['photo']} alt="" class="popup__img-traier">
+	<div class="popup__img-traier" style="background: #062436 url('${trainer['photo']}') center / cover no-repeat;"></div>
 	<p class="popup__text-trainer">оставьте свои данные</p>
 	<form>
 	<input type="text" id="train-name" class="try-train__input" placeholder="ФИО" required>
@@ -701,6 +701,7 @@ function getPromotions() {
 		type: "GET",
 		url: `${serverUrl}/promotions`,
 		success: function (data) {
+			console.log('promotion');
 			console.log(data);
 			let promotions = data;
 
@@ -709,7 +710,7 @@ function getPromotions() {
 					`
 					<a data-id="${promotion['id']}" class="item-promotion sales-popup-link">
 								<img src="${promotion['image_full']}" alt=""> 
-								<p>${promotion['image_full']}</p>
+								
 							</a>
 					`
 				)

@@ -438,6 +438,12 @@ $xs: 768px;
 	}
 }
 
+#news-popup {
+	.close-popup {
+		cursor: pointer;
+	}
+}
+
 #sales-popup {
 	.popup__body {
 		display: flex;
@@ -506,7 +512,10 @@ $xs: 768px;
 		margin: 44px 0 20px 0;
 	}
 	.popup__img-traier {
-		width: 50%;
+		width: 150px;
+		border-radius: 50%;
+		height: 150px;
+		margin: 0 auto;
 	}
 	.popup__trainer-title {
 		font-weight: bold;

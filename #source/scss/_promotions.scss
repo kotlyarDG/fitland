@@ -31,6 +31,7 @@
 
 	&__items {
 		position: relative;
+		margin: 30px 0 0 0;
 
 		.slick-track {
 			// display: flex;
@@ -40,6 +41,7 @@
 		.slick-slide {
 			display: flex !important;
 			justify-content: center !important;
+			cursor: pointer;
 		}
 
 		.slick-arrow {
