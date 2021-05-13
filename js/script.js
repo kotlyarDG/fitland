@@ -205,6 +205,12 @@ $(document).ready(function () {
 
 	}, 1500);
 
+	$(document).keyup(function (e) {
+		if (e.key === "Escape") {
+			$('.popup').removeClass('open');
+		}
+	});
+
 });
 
 function getTrainers() {
