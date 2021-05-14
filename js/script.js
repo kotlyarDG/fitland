@@ -17,7 +17,18 @@ $(document).ready(function () {
 			center: [55.782546568956114, 37.58127150000001],
 			zoom: 17
 		});
+		var placemark = new ymaps.Placemark([55.782546568956114, 37.58127150000001], {
+			hintContent: 'FITLAND',
+			balloonContent: `FITLAND, 2. м. Белорусская, м. Динамо
+			3-я улица Ямского поля, д. 2, корп. 4`
+
+		});
+
+		myMap.geoObjects.add(placemark);
 	});
+
+
+
 
 	$('.popup-first__img').click(function (e) {
 		e.preventDefault();

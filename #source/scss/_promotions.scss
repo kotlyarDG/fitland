@@ -42,7 +42,6 @@
 			display: flex !important;
 			justify-content: center !important;
 			cursor: pointer;
-			// width: 90% !important;
 		}
 
 		.slick-arrow {
@@ -93,19 +92,20 @@
 		.slick-dots li {
 			width: 10px;
 			height: 10px;
-			background: #cb7c61;
+			background: #cb7c61 !important;
 			border-radius: 50%;
 			margin: 0 10px;
 			cursor: pointer;
 		}
 		/* Активная точка */
 		.slick-dots li.slick-active {
-			background: #9e5a42;
+			background: #9e5a42 !important;
 		}
 		/* Элемент точки */
 		.slick-dots li button {
 			font-size: 0;
-			background: none;
+			background: none !important;
+			border: none !important;
 		}
 	}
 }
@@ -114,5 +114,9 @@
 
 	img {
 		width: 90%;
+
+		@media (max-width: 768px) {
+			max-width: 100%;
+		}
 	}
 }

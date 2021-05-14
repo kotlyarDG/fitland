@@ -5,27 +5,6 @@
 		padding: 40px 0;
 	}
 
-	&__leaf-f {
-		position: absolute;
-		bottom: -25%;
-		left: 0;
-		z-index: 10;
-
-		max-width: 45vw;
-
-		@media (max-width: 1100px) {
-			bottom: -150px;
-		}
-
-		@media (max-width: 520px) {
-			bottom: -80px;
-		}
-
-		img {
-			max-width: 100%;
-		}
-	}
-
 	&__wrapper {
 		padding: 0 70px;
 		position: relative;
