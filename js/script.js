@@ -4,7 +4,7 @@ const serverUrl = 'https://www.landback.site/fitland';
 $(document).ready(function () {
 
 	getPromotions();
-	getTrainers();
+	// getTrainers();
 	getTickets();
 	getClass();
 	getPersonals();

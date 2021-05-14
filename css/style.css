@@ -1149,6 +1149,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
+  min-width: 120px;
+  word-wrap: none;
+  text-align: right;
   color: #323232;
 }
 
@@ -2828,10 +2831,11 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .popup-first__wrapper {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   background: #b4745e url("../images/system_img/lines-popup.svg") center/cover no-repeat;
   border-radius: 90px;
+  position: relative;
   padding: 30px;
 }
 
@@ -2849,7 +2853,7 @@ input[type="checkbox"]:checked + label:after {
 
 .popup-first__content {
   border-radius: 90px;
-  padding: 3vh 5vw;
+  padding: 1vh 2vw;
   text-align: center;
 }
 
@@ -2860,10 +2864,10 @@ input[type="checkbox"]:checked + label:after {
 }
 
 .popup-first__block {
-  max-height: calc(70vh - 70px);
+  max-height: calc(90vh - 70px);
   overflow: auto;
   border-radius: 90px;
-  padding: 30px 15px;
+  padding: 0 15px;
 }
 
 @media (max-width: 600px) {
@@ -2880,11 +2884,14 @@ input[type="checkbox"]:checked + label:after {
 
 .popup-first__close {
   cursor: pointer;
-  margin: 15px 0 0 15px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
 }
 
 .popup-first__logo {
   margin: 0 auto;
+  width: 160px;
 }
 
 @media (max-width: 768px) {
@@ -2900,15 +2907,21 @@ input[type="checkbox"]:checked + label:after {
 .popup-first__title {
   font-weight: bold;
   color: #ffffff;
-  margin: 40px 0 0 0;
-  font-size: calc(20px + 10 * ((100vw - 320px) / 960));
+  margin: 20px 0 0 0;
+  font-size: calc(18px + 7 * ((100vw - 320px) / 960));
   line-height: 121%;
   text-transform: uppercase;
 }
 
+@media (min-width: 1650px) {
+  .popup-first__title {
+    margin: 40px 0 30px 0;
+  }
+}
+
 .popup-first__text {
-  margin: 35px 0 0 0;
-  font-size: calc(14px + 4 * ((100vw - 320px) / 960));
+  margin: 10px 0 0 0;
+  font-size: calc(12px + 3 * ((100vw - 320px) / 960));
   line-height: 121%;
   text-align: center;
   color: #fff;
@@ -2916,28 +2929,39 @@ input[type="checkbox"]:checked + label:after {
 
 .popup-first__tagline {
   display: inline-block;
-  margin: 35px 0 0 0;
+  margin: 10px 0 0 0;
   border: 3px solid #e7dcc9;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 50px;
-  padding: 15px 30px;
+  padding: 12px 30px;
   font-weight: bold;
-  font-size: calc(16px + 9 * ((100vw - 320px) / 960));
+  font-size: calc(16px + 5 * ((100vw - 320px) / 960));
   line-height: 121%;
   text-align: center;
   color: #e7dcc9;
 }
 
+@media (min-width: 1650px) {
+  .popup-first__tagline {
+    margin: 30px 0 30px 0;
+  }
+}
+
 .popup-first__images {
-  margin: 30px 0 0 0;
+  margin: 20px auto 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  overflow-x: auto;
+  overflow-x: hidden;
   border-radius: 25px;
   overflow-y: hidden;
+  height: 120px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 1200px;
 }
 
 .popup-first__img {
@@ -3159,7 +3183,7 @@ input[type="checkbox"]:checked + label:after {
   border-radius: 0;
   overflow-y: auto;
   max-height: 100vh;
-  background: url("../../images/system_img/bg-services.png") center/cover no-repeat;
+  background: url("../images/system_img/bg-services.png") center/cover no-repeat;
 }
 
 #order-popup .order-img {

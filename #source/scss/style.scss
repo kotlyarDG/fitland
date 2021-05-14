@@ -323,11 +323,12 @@ $xs: 768px;
 		padding: 0;
 	}
 	&__wrapper {
-		width: 80%;
+		width: 85%;
 		margin: 0 auto;
 		background: #b4745e url("../images/system_img/lines-popup.svg") center / cover no-repeat;
 
 		border-radius: 90px;
+		position: relative;
 
 		padding: 30px;
 
@@ -342,7 +343,7 @@ $xs: 768px;
 
 	&__content {
 		border-radius: 90px;
-		padding: 3vh 5vw;
+		padding: 1vh 2vw;
 
 		text-align: center;
 		@media (max-width: 768px) {
@@ -351,10 +352,11 @@ $xs: 768px;
 	}
 
 	&__block {
-		max-height: calc(70vh - 70px);
+		max-height: calc(90vh - 70px);
+
 		overflow: auto;
 		border-radius: 90px;
-		padding: 30px 15px;
+		padding: 0 15px;
 
 		@media (max-width: 600px) {
 			max-height: calc(80vh - 70px);
@@ -367,11 +369,15 @@ $xs: 768px;
 
 	&__close {
 		cursor: pointer;
-		margin: 15px 0 0 15px;
+		// margin: 15px 0 0 15px;
+		position: absolute;
+		top: 30px;
+		left: 30px;
 	}
 
 	&__logo {
 		margin: 0 auto;
+		width: 160px;
 
 		@media (max-width: $xs) {
 			width: 180px;
@@ -386,15 +392,19 @@ $xs: 768px;
 		font-weight: bold;
 
 		color: #ffffff;
-		margin: 40px 0 0 0;
-		@include adaptive-font(30, 20);
+		margin: 20px 0 0 0;
+		@include adaptive-font(25, 18);
 		line-height: 121%;
 		text-transform: uppercase;
+
+		@media (min-width: 1650px) {
+			margin: 40px 0 30px 0;
+		}
 	}
 
 	&__text {
-		margin: 35px 0 0 0;
-		@include adaptive-font(18, 14);
+		margin: 10px 0 0 0;
+		@include adaptive-font(15, 12);
 		line-height: 121%;
 		text-align: center;
 		color: #fff;
@@ -402,25 +412,31 @@ $xs: 768px;
 
 	&__tagline {
 		display: inline-block;
-		margin: 35px 0 0 0;
+		margin: 10px 0 0 0;
 		border: 3px solid #e7dcc9;
 		box-sizing: border-box;
 		border-radius: 50px;
-		padding: 15px 30px;
+		padding: 12px 30px;
 		font-weight: bold;
-		@include adaptive-font(25, 16);
+		@include adaptive-font(21, 16);
 		line-height: 121%;
 		text-align: center;
 		color: #e7dcc9;
+		@media (min-width: 1650px) {
+			margin: 30px 0 30px 0;
+		}
 	}
 
 	&__images {
-		margin: 30px 0 0 0;
+		margin: 20px auto 0 auto;
 		display: flex;
 		width: 100%;
-		overflow-x: auto;
+		overflow-x: hidden;
 		border-radius: 25px;
 		overflow-y: hidden;
+		height: 120px;
+		justify-content: center;
+		max-width: 1200px;
 	}
 
 	&__img {
@@ -650,7 +666,7 @@ $xs: 768px;
 		border-radius: 0;
 		overflow-y: auto;
 		max-height: 100vh;
-		background: url("../../images/system_img/bg-services.png") center / cover no-repeat;
+		background: url("../images/system_img/bg-services.png") center / cover no-repeat;
 	}
 
 	.order-img {
