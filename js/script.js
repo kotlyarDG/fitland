@@ -726,14 +726,26 @@ function getPromotions() {
 			let promotions = data;
 
 			for (let promotion of promotions) {
-				$('.promotions__items').append(
-					`
-					<a data-id="${promotion['id']}" class="item-promotion sales-popup-link">
-								<img src="${promotion['image_full']}" alt=""> 
-								
-							</a>
-					`
-				)
+				if ($(window).width() < 769) {
+					$('.promotions__items').append(
+						`
+						<a data-id="${promotion['id']}" class="item-promotion sales-popup-link">
+									<img src="${promotion['image_mini']}" alt=""> 
+									
+								</a>
+						`
+					)
+				} else {
+					$('.promotions__items').append(
+						`
+						<a data-id="${promotion['id']}" class="item-promotion sales-popup-link">
+									<img src="${promotion['image_full']}" alt=""> 
+									
+								</a>
+						`
+					)
+				}
+
 			}
 
 			$('.sales-popup-link').click(function (e) {
