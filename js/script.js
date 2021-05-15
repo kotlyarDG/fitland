@@ -363,20 +363,64 @@ function getTickets() {
 			let tickets = data;
 
 			for (let item of tickets) {
-				$('.services__list--tickets').find('.services-list__items').append(
-					`
-					<div class="services-list__item">
-										<div class="services-list__item-left">
-											<p class="services-list__item-title">${item['title']}</p>
-											<p class="services-list__item-subtitle">${item['description']}</p>
+				if (item['is_active_opener'] && item['is_active_price']) {
+					$('.services__list--tickets').find('.services-list__items').append(
+						`
+						<div class="services-list__item">
+											<div class="services-list__item-left">
+												<p class="services-list__item-title">${item['title']}</p>
+												<p class="services-list__item-subtitle">${item['description']}</p>
+											</div>
+											<div class="services-list__item-right">
+												<p class="services-list__item-price">${item['price']} р.</p>
+												<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+											</div>
 										</div>
-										<div class="services-list__item-right">
-											<p class="services-list__item-price">${item['price']} р.</p>
-											<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
-										</div>
-									</div>
-					`
-				);
+						`
+					);
+				} else {
+					if (!item['is_active_opener'] && !item['is_active_price']) {
+						$('.services__list--tickets').find('.services-list__items').append(
+							`
+							<div class="services-list__item">
+												<div class="services-list__item-left">
+													<p class="services-list__item-title">${item['title']}</p>
+													<p class="services-list__item-subtitle">${item['description']}</p>
+												</div>
+											</div>
+							`
+						);
+					} else if (!item['is_active_opener']) {
+						$('.services__list--tickets').find('.services-list__items').append(
+							`
+							<div class="services-list__item">
+												<div class="services-list__item-left">
+													<p class="services-list__item-title">${item['title']}</p>
+													<p class="services-list__item-subtitle">${item['description']}</p>
+												</div>
+												<div class="services-list__item-right">
+													<p class="services-list__item-price">${item['price']} р.</p>
+												</div>
+											</div>
+							`
+						);
+					} else if (!item['is_active_price']) {
+						$('.services__list--tickets').find('.services-list__items').append(
+							`
+							<div class="services-list__item">
+												<div class="services-list__item-left">
+													<p class="services-list__item-title">${item['title']}</p>
+													<p class="services-list__item-subtitle">${item['description']}</p>
+												</div>
+												<div class="services-list__item-right">
+													<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+												</div>
+											</div>
+							`
+						);
+					}
+				}
+
 
 			};
 
@@ -445,20 +489,64 @@ function getClass() {
 			console.log(data);
 			let classes = data;
 			for (let item of classes) {
-				$('.services__list--class').find('.services-list__items').append(
-					`
-					<div class="services-list__item">
-										<div class="services-list__item-left">
-											<p class="services-list__item-title">${item['title']}</p>
-											<p class="services-list__item-subtitle">${item['description']}</p>
+
+				if (item['is_active_opener'] && item['is_active_price']) {
+					$('.services__list--class').find('.services-list__items').append(
+						`
+						<div class="services-list__item">
+											<div class="services-list__item-left">
+												<p class="services-list__item-title">${item['title']}</p>
+												<p class="services-list__item-subtitle">${item['description']}</p>
+											</div>
+											<div class="services-list__item-right">
+												<p class="services-list__item-price">${item['price']} р.</p>
+												<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+											</div>
 										</div>
-										<div class="services-list__item-right">
-											<p class="services-list__item-price">${item['price']} р.</p>
-											<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
-										</div>
-									</div>
-					`
-				);
+						`
+					);
+				} else {
+					if (!item['is_active_opener'] && !item['is_active_price']) {
+						$('.services__list--class').find('.services-list__items').append(
+							`
+							<div class="services-list__item">
+												<div class="services-list__item-left">
+													<p class="services-list__item-title">${item['title']}</p>
+													<p class="services-list__item-subtitle">${item['description']}</p>
+												</div>
+											</div>
+							`
+						);
+					} else if (!item['is_active_opener']) {
+						$('.services__list--class').find('.services-list__items').append(
+							`
+							<div class="services-list__item">
+												<div class="services-list__item-left">
+													<p class="services-list__item-title">${item['title']}</p>
+													<p class="services-list__item-subtitle">${item['description']}</p>
+												</div>
+												<div class="services-list__item-right">
+													<p class="services-list__item-price">${item['price']} р.</p>
+												</div>
+											</div>
+							`
+						);
+					} else if (!item['is_active_price']) {
+						$('.services__list--class').find('.services-list__items').append(
+							`
+							<div class="services-list__item">
+												<div class="services-list__item-left">
+													<p class="services-list__item-title">${item['title']}</p>
+													<p class="services-list__item-subtitle">${item['description']}</p>
+												</div>
+												<div class="services-list__item-right">
+													<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+												</div>
+											</div>
+							`
+						);
+					}
+				}
 
 			};
 
@@ -556,20 +644,64 @@ function getPersonals() {
 			let personals = data;
 
 			for (let item of personals) {
-				$('.services__list--personal').find('.services-list__items').append(
-					`
-				<div class="services-list__item">
-									<div class="services-list__item-left">
-										<p class="services-list__item-title">${item['title']}</p>
-										<p class="services-list__item-subtitle">${item['description']}</p>
-									</div>
-									<div class="services-list__item-right">
-										<p class="services-list__item-price">${item['price']} р.</p>
-										<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
-									</div>
-								</div>
-				`
-				);
+
+				if (item['is_active_opener'] && item['is_active_price']) {
+					$('.services__list--personal').find('.services-list__items').append(
+						`
+						<div class="services-list__item">
+											<div class="services-list__item-left">
+												<p class="services-list__item-title">${item['title']}</p>
+												<p class="services-list__item-subtitle">${item['description']}</p>
+											</div>
+											<div class="services-list__item-right">
+												<p class="services-list__item-price">${item['price']} р.</p>
+												<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+											</div>
+										</div>
+						`
+					);
+				} else {
+					if (!item['is_active_opener'] && !item['is_active_price']) {
+						$('.services__list--personal').find('.services-list__items').append(
+							`
+							<div class="services-list__item">
+												<div class="services-list__item-left">
+													<p class="services-list__item-title">${item['title']}</p>
+													<p class="services-list__item-subtitle">${item['description']}</p>
+												</div>
+											</div>
+							`
+						);
+					} else if (!item['is_active_opener']) {
+						$('.services__list--personal').find('.services-list__items').append(
+							`
+							<div class="services-list__item">
+												<div class="services-list__item-left">
+													<p class="services-list__item-title">${item['title']}</p>
+													<p class="services-list__item-subtitle">${item['description']}</p>
+												</div>
+												<div class="services-list__item-right">
+													<p class="services-list__item-price">${item['price']} р.</p>
+												</div>
+											</div>
+							`
+						);
+					} else if (!item['is_active_price']) {
+						$('.services__list--personal').find('.services-list__items').append(
+							`
+							<div class="services-list__item">
+												<div class="services-list__item-left">
+													<p class="services-list__item-title">${item['title']}</p>
+													<p class="services-list__item-subtitle">${item['description']}</p>
+												</div>
+												<div class="services-list__item-right">
+													<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+												</div>
+											</div>
+							`
+						);
+					}
+				}
 
 			};
 
@@ -648,20 +780,64 @@ function getAdditionals() {
 			let additionals = data;
 
 			for (let item of additionals) {
-				$('.services__list--additional').find('.services-list__items').append(
-					`
-					<div class="services-list__item">
-										<div class="services-list__item-left">
-											<p class="services-list__item-title">${item['title']}</p>
-											<p class="services-list__item-subtitle">${item['description']}</p>
+
+				if (item['is_active_opener'] && item['is_active_price']) {
+					$('.services__list--additional').find('.services-list__items').append(
+						`
+						<div class="services-list__item">
+											<div class="services-list__item-left">
+												<p class="services-list__item-title">${item['title']}</p>
+												<p class="services-list__item-subtitle">${item['description']}</p>
+											</div>
+											<div class="services-list__item-right">
+												<p class="services-list__item-price">${item['price']} р.</p>
+												<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+											</div>
 										</div>
-										<div class="services-list__item-right">
-											<p class="services-list__item-price">${item['price']} р.</p>
-											<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
-										</div>
-									</div>
-					`
-				);
+						`
+					);
+				} else {
+					if (!item['is_active_opener'] && !item['is_active_price']) {
+						$('.services__list--additional').find('.services-list__items').append(
+							`
+							<div class="services-list__item">
+												<div class="services-list__item-left">
+													<p class="services-list__item-title">${item['title']}</p>
+													<p class="services-list__item-subtitle">${item['description']}</p>
+												</div>
+											</div>
+							`
+						);
+					} else if (!item['is_active_opener']) {
+						$('.services__list--additional').find('.services-list__items').append(
+							`
+							<div class="services-list__item">
+												<div class="services-list__item-left">
+													<p class="services-list__item-title">${item['title']}</p>
+													<p class="services-list__item-subtitle">${item['description']}</p>
+												</div>
+												<div class="services-list__item-right">
+													<p class="services-list__item-price">${item['price']} р.</p>
+												</div>
+											</div>
+							`
+						);
+					} else if (!item['is_active_price']) {
+						$('.services__list--additional').find('.services-list__items').append(
+							`
+							<div class="services-list__item">
+												<div class="services-list__item-left">
+													<p class="services-list__item-title">${item['title']}</p>
+													<p class="services-list__item-subtitle">${item['description']}</p>
+												</div>
+												<div class="services-list__item-right">
+													<button data-id="${item['id']}" class="services-list__item-btn">заказать</button>
+												</div>
+											</div>
+							`
+						);
+					}
+				}
 
 			};
 
