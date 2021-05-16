@@ -139,6 +139,10 @@ $(document).ready(function () {
 				$('.services-item__wrapper').not(item.next()).slideUp(350);
 				$('.title-service').not(item).removeClass('title-service_active');
 				$('.title-service').not(item).addClass('title-service_not-active');
+				$('.services__list').show();
+				$('.services__list').addClass('_active');
+				$('.services__form').hide();
+				$('.services__form').removeClass('_active');
 
 			} else {
 				$('.services__title').hide(300);
@@ -400,6 +404,7 @@ function getTickets() {
 												</div>
 												<div class="services-list__item-right">
 													<p class="services-list__item-price">${item['price']} р.</p>
+													<div style="width: 165px"></div>
 												</div>
 											</div>
 							`
@@ -527,6 +532,7 @@ function getClass() {
 												</div>
 												<div class="services-list__item-right">
 													<p class="services-list__item-price">${item['price']} р.</p>
+													<div style="width: 165px"></div>
 												</div>
 											</div>
 							`
@@ -682,6 +688,7 @@ function getPersonals() {
 												</div>
 												<div class="services-list__item-right">
 													<p class="services-list__item-price">${item['price']} р.</p>
+													<div style="width: 165px"></div>
 												</div>
 											</div>
 							`
@@ -818,6 +825,7 @@ function getAdditionals() {
 												</div>
 												<div class="services-list__item-right">
 													<p class="services-list__item-price">${item['price']} р.</p>
+													<div style="width: 165px"></div>
 												</div>
 											</div>
 							`
@@ -944,7 +952,8 @@ function getPromotions() {
 
 			$('.promotions__items').slick({
 				arrows: true,
-				dots: true
+				dots: true,
+				adaptiveHeight: true
 			})
 		},
 		error: function (errMsg) {

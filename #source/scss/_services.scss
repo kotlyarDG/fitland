@@ -104,15 +104,31 @@
 }
 .title-service--tickets {
 	background: url("../images/system_img/services/01.jpg") center / cover no-repeat;
+
+	@media (max-width: 991px) {
+		background: url("../images/system_img/services/01.jpg") top / cover no-repeat;
+	}
 }
 .title-service--class {
 	background: url("../images/system_img/services/02.jpg") center / cover no-repeat;
+
+	@media (max-width: 991px) {
+		background: url("../images/system_img/services/02.jpg") 30% / cover no-repeat;
+	}
 }
 .title-service--personal {
 	background: url("../images/system_img/services/03.jpg") center / cover no-repeat;
+
+	@media (max-width: 991px) {
+		background: url("../images/system_img/services/03.jpg") center top / cover no-repeat;
+	}
 }
 .title-service--additional {
 	background: url("../images/system_img/services/04.jpg") center / cover no-repeat;
+
+	@media (max-width: 991px) {
+		background: url("../images/system_img/services/04.jpg") top / cover no-repeat;
+	}
 }
 
 .services__btn-back {
@@ -146,7 +162,7 @@
 		height: 65vh;
 		max-height: 65vh;
 		width: 100%;
-		overflow-y: auto;
+		// overflow-y: auto;
 	}
 
 	@media (max-width: 768px) {
@@ -159,6 +175,12 @@
 		height: 95vh;
 		max-height: 95vh;
 		padding: 100px 0 0px 0;
+	}
+
+	@media (max-width: 500px) {
+		height: 90vh;
+		max-height: 90vh;
+		padding: 20px 0 20px 0;
 	}
 }
 
@@ -181,9 +203,9 @@
 		overflow-y: auto;
 
 		@media (max-width: 991px) {
-			overflow-y: unset;
-			max-height: auto;
-			padding: 0;
+			// overflow-y: unset;
+			// max-height: auto;
+			padding: 0 0 20px 0;
 		}
 	}
 
@@ -196,6 +218,10 @@
 			flex-direction: column;
 			justify-content: center;
 			padding: 0 10px;
+
+			&:last-child {
+				margin: 0 0 20px 0;
+			}
 		}
 	}
 
@@ -245,7 +271,7 @@
 
 		color: #323232;
 		@media (max-width: 500px) {
-			margin: 0 0 30px 0;
+			margin: 20px 0 10px 0;
 		}
 	}
 
@@ -267,6 +293,10 @@
 		&:hover {
 			transform: translateY(1px);
 		}
+
+		@media (max-width: 500px) {
+			display: block;
+		}
 	}
 }
 
@@ -278,6 +308,14 @@
 		align-items: center;
 		justify-content: center;
 		flex: 1 1 auto;
+		overflow-y: auto;
+
+		@media (max-width: 768px) {
+			display: block;
+			text-align: center;
+			height: 100%;
+			max-height: 100%;
+		}
 	}
 	&__form {
 		// flex: 0 1 75%;
@@ -288,7 +326,6 @@
 		height: 100%;
 		min-height: 441px;
 		max-height: 100%;
-		overflow-y: auto;
 
 		@media (max-width: 991px) {
 			padding: 20px 10px 40px 10px;
@@ -322,6 +359,10 @@
 
 		@media (max-width: 991px) {
 			width: 280px;
+		}
+
+		@media (max-width: 768px) {
+			margin: 0 auto 30px auto;
 		}
 	}
 
